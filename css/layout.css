@@ -1,0 +1,35 @@
+body {
+	background-color: var(--background);
+	color: var(--foreground);
+	transition: background-color .3s, color .3s;
+}
+
+header#site-header {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+}
+
+@media only screen and (min-width: 30em) {
+	header#site-header {
+		width: 4em;
+		height: 12em;
+	}
+}
+
+/* >= 880px */
+@media only screen and (min-width: 55em) {
+	header#site-header {
+		width: 12em;
+		height: 100vh;
+		bottom: auto;
+		position: fixed;
+	}
+
+	main {
+		width: calc(100% - 12em);
+		margin: 0 0 0 12em;
+		float: left;
+	}
+}

@@ -1,0 +1,49 @@
+.fluff {
+	display: block;
+	margin: calc(1.4 * var(--txt-p)) 0 0;
+	color: var(--primary-color);
+	font-family: var(--headings);
+	font-size: var(--txt-h2);
+	font-weight: 400;
+	letter-spacing: 0.125em;
+	line-height: 1.0em;
+}
+
+.article-text > p:first-of-type {
+	font-size: var(--txt-h4);
+	line-height: 1.3em;
+	margin: calc(0.75 * var(--txt-p)) 0 calc(1.4 * var(--txt-p));
+}
+
+.article-text {
+	padding: 0 10vw;
+}
+
+header#article-header {
+	height: 24em;
+	background: lightsalmon;
+	overflow: hidden;
+}
+
+header#article-header img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: 50% 50%;
+}
+
+/* >= 880px */
+@media only screen and (min-width: 55em) {
+	.article-text {
+		max-width: 45em;
+		margin: 0 auto;
+		padding: 0 6em;
+	}
+}
+
+/* >= 1408px */
+@media only screen and (min-width: 88em) {
+	.article-text {
+		border-left: .125em solid var(--secondary-color);
+	}
+}
