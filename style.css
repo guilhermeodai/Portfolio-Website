@@ -62,7 +62,7 @@
 
 
 /* Tema Claro */
-[data-theme="light"] {
+:root[data-theme="light"] {
 	--background: #f0f0f0;
 	--foreground: #111;
 	--secondary-color: #c0c0c0;
@@ -70,7 +70,7 @@
 }
 
 /* Tema Escuro */
-[data-theme="dark"] {
+:root[data-theme="dark"] {
 	--background: #111;
 	--foreground: #f0f0f0;
 	--secondary-color: #444;
