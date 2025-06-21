@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US" data-theme="light">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+	<title>{{ page.title }} | {{ site.title }}</title>
+
+	<!-- folhas de estilo -->
+	<link rel="stylesheet" type="text/css" href="{{ '/css/style.css' | relative_url }}" media="screen">
+
+	<!-- favicon -->
+	<link rel="icon" href="{{ '/assets/icons/favicon.svg' | relative_url }}" type="image/svg+xml">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+
+	<!-- javascript -->
+	<script>
+		(function () {
+			const savedTheme = localStorage.getItem("theme") || "light";
+			document.documentElement.setAttribute("data-theme", savedTheme);
+		})();
+	</script>
+	<script type='text/javascript' src="{{ '/js/theme-switcher.js' | relative_url }}" defer></script>
+</head>
+
+<body>
+	<div id="svg-sprite-container"></div>
+	<script>
+		fetch('{{ "/assets/icons/icons.svg" | relative_url }}')
+			.then(response => response.text())
+			.then(svgText => {
+				document.getElementById('svg-sprite-container').innerHTML = svgText;
+			})
+			.catch(error => console.error('Erro ao carregar SVG sprite:', error));
+	</script>
+
+	<header id="site-header">
+		<nav id="main-navigation" role="navigation">
+			<div id="logo">
+				<a href="{{ '/' | relative_url }}">
+					Guilherme Almeida
+				</a>
+			</div>
+			<ul id="main-menu">
+				<li><a href="{{ '/' | relative_url }}">Home</a></li>
+				<li><a href="{{ '/portfolio/' | relative_url }}">Portfolio</a></li>
+				<li><a href="{{ '/articles/' | relative_url }}">Articles</a></li>
+				<li><a href="{{ '/about/' | relative_url }}">About</a></li>
+				<li>
+					<a href="https://www.linkedin.com/in/guilherme-odai/" target="_blank" rel="noopener noreferrer" class="icon" aria-label="LinkedIn Profile">
+						<svg class="icon-linkedin">
+							<use href="#icon-linkedin"></use>
+						</svg>
+					</a>
+				</li>
+			</ul>
+			<div id="settings">
+				<label class="toggle-label">
+					<input type="checkbox" id="theme-toggle">
+					<span class="toggle-switch">
+						<svg class="icon-sun">
+							<use href="#icon-sun"></use>
+						</svg>
+						<svg class="icon-moon">
+							<use href="#icon-moon"></use>
+						</svg>
+					</span>
+				</label>
+			</div>
+			<button id="hamburger-menu" type="button" aria-label="Toggle menu" aria-controls="main-menu" aria-expanded="false">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</button>
+		</nav>
+	</header>
+
+	<main class="grid-container">
+		{{ content }}
+	</main>
+
+	<script type='text/javascript' src="{{ 'js/mobile-menu.js' | relative_url }}" defer></script>
+	<script>
+		const SOM_URL = '{{ "/assets/extras/k-sound.mp3" | relative_url }}';
+		const P8_URL = '{{ "/assets/extras/coolstd.html" | relative_url }}';
+	</script>
+	<script type='text/javascript' src="{{ 'js/trapaca.js' | relative_url }}" defer></script>
+
+</body>

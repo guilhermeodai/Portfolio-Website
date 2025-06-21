@@ -1,0 +1,157 @@
+---
+layout: default
+---
+
+<section id="intro" class="col-4">
+	<div class="sticky">
+		<h1 id="typing-text"><em>Hi! I'm</em> Guilherme</h1>
+		{{ content }}
+		<p>
+			<a href="https://www.linkedin.com/in/guilherme-odai/" target="_blank" rel="noopener noreferrer" class="icon">
+				Let's connect
+				<svg class="icon-linkedin">
+					<use href="#icon-linkedin"></use>
+				</svg>
+			</a>
+		</p>
+	</div>
+</section>
+
+<div class="col-8">
+	<section id="projects">
+		<header>
+			<h2 class="section-title">{{ page.projects-title | default: 'Missing Title'}}</h2>
+			<p class="section-description">{{ page.projects-description | default: 'Missing description'}}</p>
+		</header>
+		<div class="sample-portfolio-grid">
+			{% assign projects = site.portfolio-projects | sort: 'date' | reverse %}
+			{% for item in projects limit:2 %}
+			<article class="portfolio-card">
+				<a href="{{ item.url }}" class="portfolio-card-link">
+					<div class="portfolio-card-image">
+						<img src="{{ item.image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ item.title }} preview">
+					</div>
+					<div class="portfolio-card-info">
+						<h3>{{ item.title }}</h3>
+						<ul>
+							<li><small>Description</small> {{ item.summary-description | default: '—' }}</li>
+							<li><small>Role</small> {{ item.summary-role | default: '—' }}</li>
+							<li><small>Tools</small> {{ item.summary-tools | default: '—' }}</li>
+						</ul>
+					</div>
+				</a>
+			</article>
+			{% endfor %}
+		</div>
+		<div class="more">
+			<a href="portfolio.html">All projects
+				<svg class="icon-arrow">
+					<use href="#icon-arrow"></use>
+				</svg>
+			</a>
+		</div>
+	</section>
+
+	<section id="case-studies">
+		<header>
+			<h2 class="section-title">{{ page.cases-title | default: 'Missing Title'}}</h2>
+			<p class="section-description">{{ page.cases-description | default: 'Missing description'}}</p>
+		</header>
+		<div class="sample-portfolio-grid">
+			{% assign cases = site.portfolio-cases | sort: 'date' | reverse %}
+			{% for item in cases limit:2 %}
+			<article class="portfolio-card">
+				<a href="{{ item.url }}" class="portfolio-card-link">
+					<div class="portfolio-card-image">
+						<img src="{{ item.image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ item.title }} preview">
+					</div>
+					<div class="portfolio-card-info">
+						<h3>Designing a boss health bar for Atlas Fallen</h3>
+						<ul>
+							<li><small>Problem</small> {{ item.summary-problem | default: '—' }}</li>
+							<li><small>Solution</small> {{ item.summary-solution | default: '—' }}</li>
+							<li><small>Outcome</small> {{ item.summary-outcome | default: '—' }}</li>
+						</ul>
+					</div>
+				</a>
+			</article>
+			{% endfor %}
+		</div>
+		<div class="more">
+			<a href="portfolio.html#case-studies">All case studies
+				<svg class="icon-arrow">
+					<use href="#icon-arrow"></use>
+				</svg>
+			</a>
+		</div>
+	</section>
+
+	<section id="articles">
+		<header>
+			<h2 class="section-title">{{ page.articles-title | default: 'Missing Title'}}</h2>
+			<p class="section-description">{{ page.articles-description | default: 'Missing description'}}</p>
+		</header>
+		<div class="sample-blog-grid">
+			{% assign artigos = site.posts | sort: 'date' | reverse %}
+			{% for post in artigos limit:2 %}
+			<article class="blog-card">
+				<a href="{{ post.url }}" class="blog-card-link">
+					<div class="blog-card-image">
+						<img src="{{ post.image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ item.title }} preview">
+					</div>
+					<div class="blog-card-info">
+						<h3>{{ post.title }}</h3>
+						<div class="blog-card-date">
+							<svg class="icon-calendar">
+								<use href="#icon-calendar"></use>
+							</svg>
+							<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %Y" }}</time>
+						</div>
+					</div>
+				</a>
+			</article>
+			{% endfor %}
+		</div>
+		<div class="more">
+			<a href="blog.html">All articles
+				<svg class="icon-arrow">
+					<use href="#icon-arrow"></use>
+				</svg>
+			</a>
+		</div>
+	</section>
+
+	<section id="explorations">
+		<header>
+			<h2 class="section-title">{{ page.personal-title | default: 'Missing Title'}}</h2>
+			<p class="section-description">{{ page.personal-description | default: 'Missing description'}}</p>
+		</header>
+		<div class="sample-portfolio-grid">
+			{% assign explorations = site.portfolio-explorations | sort: 'date' | reverse %}
+			{% for item in explorations limit:2 %}
+			<article class="portfolio-card">
+				<a href="{{ item.url }}" class="portfolio-card-link">
+					<div class="portfolio-card-image">
+						<img src="{{ item.image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ item.title }} preview">
+					</div>
+					<div class="portfolio-card-info">
+						<h3>{{ item.title }}</h3>
+						<ul>
+							<li><small>Description</small> {{ item.summary-description | default: '—' }}</li>
+							<li><small>Role</small> {{ item.summary-role | default: '—' }}</li>
+							<li><small>Tools</small> {{ item.summary-tools | default: '—' }}</li>
+						</ul>
+					</div>
+				</a>
+			</article>
+			{% endfor %}
+		</div>
+		<div class="more">
+			<a href="portfolio.html#personal-projects">All personal projects
+				<svg class="icon-arrow">
+					<use href="#icon-arrow"></use>
+				</svg>
+			</a>
+		</div>
+	</section>
+</div>

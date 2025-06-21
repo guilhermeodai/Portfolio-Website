@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<article id="project">
+	<div class="content">
+		<header>
+			<h1>{{ page.title }}</h1>
+		</header>
+		<figure class="content-hero">
+			<img class="hero-image" src="{{ page.hero-image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ page.hero-caption | default: page.title }}">
+		</figure>
+		<div class="content-summary">
+			<h3>Project Summary</h3>
+			<ul>
+				<li><small>Description</small> AA Action RPG (PC, Console)</li>
+				<li><small>Company</small> Deck 13</li>
+				<li><small>Role</small> UX Designer</li>
+				<li><small>Process</small> Rapid Prototyping, UX Design, User Testing</li>
+			</ul>
+			<ul class="single">
+				<li><small>Problem</small> {{ page.summary-problem | default: '—' }}</li>
+				<li><small>Solution</small> {{ page.summary-solution | default: '—' }}</li>
+				<li><small>Outcome</small> {{ page.summary-outcome | default: '—' }}</li>
+			</ul>
+		</div>
+		<div class="content-body">
+			{{ content }}
+		</div>
+	</div>
+</article>
