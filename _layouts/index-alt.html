@@ -1,0 +1,185 @@
+---
+layout: default
+---
+
+<main class=" no-margin">
+	<div class="grid-container">
+		<section id="intro" class="col-4">
+			<div class="sticky">
+				<h1 id="typing-text"><em>Hi! I'm</em> Guilherme</h1>
+				{{ content }}
+				<p>
+					<a href="{{ https://www.linkedin.com/in/guilherme-odai/ | absolute_url}}" target="_blank" rel="noopener noreferrer" class="icon">
+						Let's connect
+						<svg class="icon-linkedin">
+							<use href="#icon-linkedin"></use>
+						</svg>
+					</a>
+				</p>
+			</div>
+		</section>
+	</div>
+
+	{% if site.portfolio-projects and site.portfolio-projects.size > 0 %}
+	<div class="grid-container">
+		<div class="col-4">
+			<header class="sticky">
+				<h2 class="section-title">{{ page.projects-title | default: 'Missing Title'}}</h2>
+				<p class="section-description">{{ page.projects-description | default: 'Missing description'}}</p>
+			</header>
+		</div>
+		{% assign featured_projects = site.portfolio-projects | where: "featured", true | sort: "date" | reverse %}
+		{% assign fallback_projects = site.portfolio-projects | sort: "date" | reverse %}
+
+		{% if featured_projects.size > 0 %}
+		{% assign projects = featured_projects %}
+		{% else %}
+		{% assign projects = fallback_projects %}
+		{% endif %}
+		<section id="projects" class="col-8 no-margin">
+			<div class="sample-portfolio-grid">
+				{% for item in projects %}
+				<article class="portfolio-card">
+					<a href="{{ item.url }}" class="portfolio-card-link">
+						<div class="portfolio-card-image">
+							<img src="{{ item.image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ item.title }} preview">
+						</div>
+						<div class="portfolio-card-info">
+							<h3>{{ item.title }}</h3>
+							<ul>
+								<li><small>Description</small> {{ item.summary-description | default: '—' }}</li>
+								<li><small>Role</small> {{ item.summary-role | default: '—' }}</li>
+								<li><small>Tools</small> {{ item.summary-tools | default: '—' }}</li>
+							</ul>
+						</div>
+					</a>
+				</article>
+				{% endfor %}
+			</div>
+		</section>
+	</div>
+	{% endif %}
+
+	{% if site.portfolio-cases and site.portfolio-cases.size > 0 %}
+	<div class="grid-container">
+		<div class="col-4">
+			<header class="sticky">
+				<h2 class="section-title">UX Case Studies</h2>
+				<p class="section-description">Detailed explorations of problems, processes, and impactful results</p>
+			</header>
+		</div>
+		{% assign featured_cases = site.portfolio-cases | where: "featured", true | sort: "date" | reverse %}
+		{% assign fallback_cases = site.portfolio-cases | sort: "date" | reverse %}
+
+		{% if featured_cases.size > 0 %}
+		{% assign cases = featured_cases %}
+		{% else %}
+		{% assign cases = fallback_cases %}
+		{% endif %}
+		<section id="case-studies" class="col-8 no-margin">
+			<div class="sample-portfolio-grid">
+				{% for item in cases %}
+				<article class="portfolio-card">
+					<a href="{{ item.url }}" class="portfolio-card-link">
+						<div class="portfolio-card-image">
+							<img src="{{ item.image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ item.title }} preview">
+						</div>
+						<div class="portfolio-card-info">
+							<h3>Designing a boss health bar for Atlas Fallen</h3>
+							<ul>
+								<li><small>Problem</small> {{ item.summary-problem | default: '—' }}</li>
+								<li><small>Solution</small> {{ item.summary-solution | default: '—' }}</li>
+								<li><small>Outcome</small> {{ item.summary-outcome | default: '—' }}</li>
+							</ul>
+						</div>
+					</a>
+				</article>
+				{% endfor %}
+			</div>
+		</section>
+	</div>
+	{% endif %}
+
+	{% if site.portfolio-personal and site.portfolio-personal.size > 0 %}
+	<div class="grid-container">
+		<div class="col-4">
+			<header class="sticky">
+				<h2 class="section-title">Personal Projects</h2>
+				<p class="section-description">Extra stuff I've made for fun, to challenge myself or just to learn something new</p>
+			</header>
+		</div>
+		{% assign featured_personal = site.portfolio-personal | where: "featured", true | sort: "date" | reverse %}
+		{% assign fallback_personal = site.portfolio-personal | sort: "date" | reverse %}
+
+		{% if featured_personal.size > 0 %}
+		{% assign personal = featured_personal %}
+		{% else %}
+		{% assign personal = fallback_personal %}
+		{% endif %}
+		<section id="personal-projects" class="col-8 no-margin">
+			<div class="sample-portfolio-grid">
+				{% for item in personal %}
+				<article class="portfolio-card">
+					<a href="{{ item.url }}" class="portfolio-card-link">
+						<div class="portfolio-card-image">
+							<img src="{{ item.image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ item.title }} preview">
+						</div>
+						<div class="portfolio-card-info">
+							<h3>{{ item.title }}</h3>
+							<ul>
+								<li><small>Description</small> {{ item.summary-description | default: '—' }}</li>
+								<li><small>Role</small> {{ item.summary-role | default: '—' }}</li>
+								<li><small>Tools</small> {{ item.summary-tools | default: '—' }}</li>
+							</ul>
+						</div>
+					</a>
+				</article>
+				{% endfor %}
+		</section>
+	</div>
+	{% endif %}
+
+	{% if site.posts and site.posts.size > 0 %}
+	<div class="grid-container">
+		<div class="col-4">
+			<header class="sticky">
+				<h2 class="section-title">Latest Articles</h2>
+				<p class="section-description">Thoughts, rants, insights, who knows?</p>
+			</header>
+		</div>
+		{% assign blog = site.posts | sort: 'date' | reverse %}
+		<section id="articles" class="col-8 no-margin">
+			<div class="sample-blog-grid">
+				{% for post in blog limit:2 %}
+				<article class="blog-card">
+					<a href="{{ post.url }}" class="blog-card-link">
+						<div class="blog-card-image">
+							<img src="{{ post.image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ post.title }} preview">
+						</div>
+						<div class="blog-card-info">
+							<h3>{{ post.title }}</h3>
+							<div class="blog-card-date">
+								<svg class="icon-calendar">
+									<use href="#icon-calendar"></use>
+								</svg>
+								<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %Y" }}</time>
+							</div>
+						</div>
+					</a>
+				</article>
+				{% endfor %}
+			</div>
+			<div class="more">
+				<a href="blog.html">All articles
+					<svg class="icon-arrow">
+						<use href="#icon-arrow"></use>
+					</svg>
+				</a>
+			</div>
+		</section>
+	</div>
+	{% endif %}
+
+	{% include footer.html %}
+
+</main>

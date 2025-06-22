@@ -39,14 +39,14 @@ collections:
   portfolio-cases:
     output: true 
     permalink: /portfolio/case-studies/:title/
+  
+  portfolio-personal:
+    output: true 
+    permalink: /portfolio/personal-projects/:title/
 
   portfolio-projects:
     output: true
     permalink: /portfolio/projects/:title/
-  
-  portfolio-explorations:
-    output: true 
-    permalink: /portfolio/explorations/:title/
 
 
 # Exclude from processing.

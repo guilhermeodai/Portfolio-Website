@@ -5,7 +5,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="referrer" content="strict-origin-when-cross-origin">
-	<title>{{ page.title }} | {{ site.title }}</title>
+	<title>
+		{% if page.url == '/' or page.url == '/index.html' %}
+		{{ site.title }} | {{ page.title }}
+		{% else %}
+		{{ page.title }} | {{ site.title }}
+		{% endif %}
+	</title>
 
 	<!-- folhas de estilo -->
 	<link rel="stylesheet" type="text/css" href="{{ '/css/style.css' | relative_url }}" media="screen">
@@ -14,6 +20,9 @@
 	<link rel="icon" href="{{ '/assets/icons/favicon.svg' | relative_url }}" type="image/svg+xml">
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+
+	<!-- rss feed -->
+	<link rel="alternate" type="application/rss+xml" href="{{ '/feed.xml' | absolute_url }}" />
 
 	<!-- javascript -->
 	<script>
@@ -49,7 +58,7 @@
 				<li><a href="{{ '/articles/' | relative_url }}">Articles</a></li>
 				<li><a href="{{ '/about/' | relative_url }}">About</a></li>
 				<li>
-					<a href="https://www.linkedin.com/in/guilherme-odai/" target="_blank" rel="noopener noreferrer" class="icon" aria-label="LinkedIn Profile">
+					<a href="{{ 'https://www.linkedin.com/in/guilherme-odai/' | absolute_url }}" target="_blank" rel="noopener noreferrer" class="icon" aria-label="LinkedIn Profile">
 						<svg class="icon-linkedin">
 							<use href="#icon-linkedin"></use>
 						</svg>
@@ -77,14 +86,12 @@
 		</nav>
 	</header>
 
-	<main class="grid-container">
-		{{ content }}
-	</main>
+	{{ content }}
 
 	<script type='text/javascript' src="{{ 'js/mobile-menu.js' | relative_url }}" defer></script>
 	<script>
-		const SOM_URL = '{{ "/assets/extras/k-sound.mp3" | relative_url }}';
-		const P8_URL = '{{ "/assets/extras/coolstd.html" | relative_url }}';
+		const SOM_URL = new URL(atob("L2Fzc2V0cy9leHRyYXMvay1zb3VuZC5tcDM="), window.location.origin).pathname;
+		const P8_URL = new URL(atob("L2JvbnVzLXN0YWdlLw=="), window.location.origin).pathname;
 	</script>
 	<script type='text/javascript' src="{{ 'js/trapaca.js' | relative_url }}" defer></script>
 
