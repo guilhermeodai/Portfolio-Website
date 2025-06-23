@@ -1118,10 +1118,10 @@ svg.icon-itchio {
 	padding-top: .5em;
 	margin-top: 1em;
 	border-top: .0625em solid var(--color-support-hc);
+	color: var(--color-background);
 }
 
 .blog-card-date time {
-	color: var(--color-background);
 	font-size: var(--small);
 }
 
@@ -1567,8 +1567,6 @@ footer {
 	justify-content: space-between;
 	border-top: .0625em solid var(--color-support-lc);
 	padding: var(--nav-height) 0;
-
-	align-items: stretch;
 }
 
 footer p {
@@ -1587,7 +1585,6 @@ footer p {
 	column-gap: 1.75em;
 	row-gap: .5em;
 	align-items: center;
-	color: var(--color-foreground);
 }
 
 .social-links {
@@ -1603,7 +1600,6 @@ footer p {
 	display: flex;
 	column-gap: .375em;
 	align-items: center;
-	color: var(--color-support-hc);
 	font-weight: 600;
 	text-decoration-color: transparent;
 }
@@ -1645,7 +1641,6 @@ footer p {
 @media only screen and (min-width: 48em) {
 	#footer-logo {
 		display: flex;
-		max-height: 6.75em;
 	}
 }
 

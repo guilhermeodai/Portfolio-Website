@@ -1,6 +1,8 @@
 ---
-layout: case-study
 title: "Designing a boss health bar in Atlas Fallen"
+description: ""
+featured: false
+
 hero-image: #/assets/images/
 hero-caption: ""
 summary-problem: "Add multiple heathbars to the HUD in the least obtrusive way possible"

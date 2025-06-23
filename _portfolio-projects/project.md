@@ -1,7 +1,10 @@
 ---
-layout: project
 title: "Coreborn: Nations of the Ultracore"
-featured: true
+description: ""
+featured: false
+
+hero-image: #/assets/images/
+hero-caption: ""
 summary-description: "Multiplayer Survival Game (PC)"
 summary-company: "Blankhans GmbH"
 summary-role: "UI/UX Generalist"

@@ -1,6 +1,5 @@
 ---
 layout: index
-title: "UI/UX Designer and Game Dev"
 
 projects-title: "Product Design Showcase"
 projects-description: "Selected works in gaming, web and UI design, focusing on the final delivery"

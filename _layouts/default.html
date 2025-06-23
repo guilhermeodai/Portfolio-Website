@@ -5,21 +5,18 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="referrer" content="strict-origin-when-cross-origin">
-	<title>
-		{% if page.url == '/' or page.url == '/index.html' %}
-		{{ site.title }} &ndash; {{ page.title }}
-		{% else %}
-		{{ page.title }} &ndash; {{ site.title }}
-		{% endif %}
-	</title>
+	<title>{% if page.url == '/' or page.url == '/index.html' %}{{ site.title }} &ndash; {{ site.description }}{% else %}{{ page.title }} &ndash; {{ site.title }}{% endif %}</title>
+
+	{% seo title=false %}
 
 	<!-- folhas de estilo -->
-	<link rel="stylesheet" type="text/css" href="{{ '/css/style.css' | relative_url }}" media="screen">
+	<link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}" media="screen">
 
 	<!-- favicon -->
 	<link rel="icon" href="{{ '/assets/icons/favicon.svg' | relative_url }}" type="image/svg+xml">
 	<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icons/favicon-32x32.png' | relative_url }}">
 	<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/icons/favicon-16x16.png' | relative_url }}">
+	<link rel="apple-touch-icon" href="{{ '/assets/icons/apple-touch-icon.png' | relative_url }}">
 
 	<!-- rss feed -->
 	<link rel="alternate" type="application/rss+xml" href="{{ '/feed.xml' | absolute_url }}" />
