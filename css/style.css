@@ -6,16 +6,19 @@
 	03. MODERN NORMALIZE (v3.0.1)
 	04.	ELEMENTOS ESTRUTURAIS
 	05.	TIPOGRAFIA
-	06.	ÍCONES SVG
-	07.	NAVEGAÇÃO
-	08.	GRIDS
-	09. CARDS
-	10. LAYOUTS DE PÁGINA
-	11. PROJETOS
-	12. POSTS
-	13. PÁGINAS
-	14. HOME
-	15.	RODAPÉ
+	06. ELEMENTOS INTERATIVOS
+	07.	ÍCONES SVG
+	08.	NAVEGAÇÃO
+	09.	GRIDS
+	10. CARDS
+	11. LAYOUTS DE PÁGINA
+	12. PROJETOS
+	13. POSTS
+	14. PÁGINAS
+	15. COLEÇÕES
+	16.	RODAPÉ
+	17. TRAPAÇA
+	18. CLASSES FUNCIONAIS
 */
 
 
@@ -121,16 +124,16 @@
 	--gray: #808080;
 
 	/* Definições de grid */ 
-	--grid-gutter: 2em;
-	--grid-max-width: 100em;
+	--grid-gutter: 2rem;
+	--grid-max-width: 100rem;
 	--grid-columns: 12;
 
 	/* Propriedades auxiliares */
-	--content-width: 32em;
-	--content-margin: 1.5em;
-	--body-padding: 1.5em;
-	--nav-height: 3.25em;
-	--fluid-padding-h: clamp(1em, 8%, 4em);
+	--content-width: 32rem;
+	--content-margin: 1.5rem;
+	--body-padding: 1.5rem;
+	--nav-height: 3.25rem;
+	--fluid-padding-h: clamp(1rem, 8%, 4rem);
 }
 
 /* Tema Claro */
@@ -142,6 +145,9 @@
 	--color-support-lc: #c0c0c0;
 	--color-support-hc: #444;
 	--color-theme-toggle: #FF7F50;
+	--color-unfocused: #fff;
+	--color-focused: rgba(0,204,102,.08);
+	--color-shadow: rgba(0,204,102,.25);
 }
 
 /* Tema Escuro */
@@ -153,36 +159,39 @@
 	--color-support-lc: #444;
 	--color-support-hc: #c0c0c0;
 	--color-theme-toggle: #4682B4;
+	--color-unfocused: #131313;
+	--color-focused: rgba(0,255,115,.04);
+	--color-shadow: rgba(0,255,115,.25);
 }
 
 /*  viewport >= 480px */
 @media only screen and (min-width: 30em) {
 	:root {
-		--content-margin: 2em;
-		--body-padding: 2em;
-		--nav-height: 4em;
+		--content-margin: 2rem;
+		--body-padding: 2rem;
+		--nav-height: 4rem;
 	}
 }
 
 /*  viewport >= 768px */
 @media only screen and (min-width: 48em) {
 	:root {
-		--content-margin: 2.5em;
-		--body-padding: 5em;
+		--content-margin: 3rem;
+		--body-padding: 5rem;
 	}
 }
 
 /*  viewport >= 1152px */
 @media only screen and (min-width: 72em) {
 	:root {
-		--body-padding: 3em;
+		--body-padding: 3rem;
 	}
 }
 
 /*  pros loucos que navegam em modo paisagem no celular */
 @media only screen and (max-height: 35em) {
 	:root {
-		--nav-height: 3.25em;
+		--nav-height: 3.25rem;
 	}
 }
 
@@ -250,7 +259,7 @@ footer {
 
 h1, h2, h3, h4, h5, h6 {
 	color: var(--color-foreground);
-	margin: 0 0 1rem;
+	margin: 0 0 calc(var(--p) * 1.4);
 	font-weight: bold;
 }
 
@@ -296,6 +305,15 @@ p, li {
 p {
 	margin: 1.4em 0;
 	letter-spacing: .02em;
+}
+
+p a {
+	color: var(--color-accent);
+ 	text-decoration-thickness: .125em;
+}
+
+h2 + p {
+	margin-top: 0;
 }
 
 li {
@@ -425,7 +443,120 @@ tbody tr:hover td {
 /*	#endregion */
 
 
-/*  #region  ■■■  06. ÍCONES SVG  ......................................................... */
+/*	#region  ■■■  06. ELEMENTOS INTERATIVOS  .............................................. */
+/*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+
+#lets-talk {
+	scroll-margin-top: calc(var(--nav-height) + var(--content-margin));
+}
+
+form.contact {
+	max-width: 35em;
+	margin: .5em auto 0;
+}
+
+form.contact h3 {
+	margin: calc(var(--p) * 2.1) 0 calc(var(--p) * .7);
+}
+
+label.contact-name,
+label.contact-email,
+label.contact-message {
+	display: block;
+	position: relative;
+	margin-bottom: 1em;
+	color: var(--color-foreground);
+	font-size: var(--small);
+	font-weight: 600;
+	letter-spacing: .01em;
+}
+
+::placeholder {
+  color: var(--gray);
+  opacity: 1; /* Necessário para Firefox */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	width: 100%;
+	padding: .75rem 1.5rem;
+	margin-top: .25rem;
+	background: var(--color-unfocused);
+	border: .125em solid var(--color-support-lc);
+	border-radius: .5em;
+	color: var(--color-foreground);
+	font-size: var(--small);
+	letter-spacing: .02em;
+	transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+	outline: none;
+	background: var(--color-focused);
+	border-color: var(--color-accent);
+	box-shadow: 0 0 .5em .125em var(--color-shadow);
+}
+
+textarea {
+	min-height: 7.5em;
+	resize: vertical;
+	line-height: 1.4em;
+}
+
+button[type="submit"] {
+	background: var(--color-foreground);
+	color: var(--color-background);
+	width: 100%;
+	padding: .75rem 1.5rem;
+	margin-top: .25em;
+	border-radius: .5em;
+	border: none;
+	font-size: var(--p);
+	font-weight: bold;
+	letter-spacing: .02em;
+	transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+	background: var(--color-accent);
+	box-shadow: 0 0 .5em .125em var(--color-shadow);
+}
+
+@keyframes pulse {
+	0% { box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.4); }
+	70% { box-shadow: 0 0 0 10px rgba(108, 92, 231, 0); }
+	100% { box-shadow: 0 0 0 0 rgba(108, 92, 231, 0); }
+}
+
+button[type="submit"]:focus {
+	outline: none;
+	background: var(--color-accent);
+	border-color: var(--color-accent);
+	box-shadow: 0 0 .5em .125em var(--color-shadow);
+	animation: pulse 1.5s infinite;
+}
+
+@media only screen and (min-width: 48em) {
+	textarea {
+		min-height: 10em;
+	}
+}
+
+@media only screen and (min-width: 80em) {
+	form.contact {
+		max-width: 41em;
+	}
+}
+
+
+
+/*	#endregion */
+
+
+/*  #region  ■■■  07. ÍCONES SVG  ......................................................... */
 /*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 
 #svg-sprite-container {
@@ -434,59 +565,24 @@ tbody tr:hover td {
 
 svg {
 	height: 1em;
-	width: 1em;
+	width: auto;
 	vertical-align: middle;
+	aspect-ratio: 1 / 1;
 }
 
 svg.icon-arrow {
 	height: .67em;
-	width: .67em;
 	margin-top: .0625em;
 }
 
-svg.icon-linkedin {
-	margin-bottom: .0625em;
+svg.icon-itchio {
+	aspect-ratio: 10 / 9;
 }
-
-/* 
-
-svg.icon-calendar {
-	height: 1em;
-	width: 1em;
-}
-
-svg.icon-language {
-	height: 1em;
-	width: 1em;
-}
-
-
-
-svg.icon-github {
-	height: 1em;
-	width: 1em;
-}
-
-svg.icon-rss {
-	height: 1em;
-	width: 1em;
-}
-
-svg.icon-tags {
-	height: 1.5em;
-	width: 1.5em;
-}
-
-svg.icon-sun,
-svg.icon-moon {
-	height: .75em;
-	width: .75em;
-} */
 
 /*	#endregion */
 
 
-/*	#region  ■■■  07. NAVEGAÇÃO  .......................................................... */
+/*	#region  ■■■  08. NAVEGAÇÃO  .......................................................... */
 /*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 
 #site-header {
@@ -633,6 +729,10 @@ svg.icon-moon {
 	transform: scaleX(1);
 }
 
+#main-menu .icon-linkedin {
+	margin-bottom: .0625em;
+}
+
 #settings {
 	display: flex;
 	margin: auto 0;
@@ -773,6 +873,10 @@ svg.icon-moon {
 		bottom: 0;
 	}
 
+	#main-menu .social {
+		display: none;
+	}
+
 	#settings {
 		margin: auto 0 auto 1em;
 	}
@@ -781,7 +885,7 @@ svg.icon-moon {
 /*	#endregion */
 
 
-/*	#region  ■■■  08. GRIDS  .............................................................. */
+/*	#region  ■■■  09. GRIDS  .............................................................. */
 /*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 
 .grid-container {
@@ -874,7 +978,7 @@ svg.icon-moon {
 /*	#endregion */
 
 
-/*	#region  ■■■  09. CARDS  .............................................................. */
+/*	#region  ■■■  10. CARDS  .............................................................. */
 /*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 
 .portfolio-card {
@@ -1058,7 +1162,7 @@ svg.icon-moon {
 /*	#endregion */
 
 
-/*	#region  ■■■  10. LAYOUTS DE PÁGINA ................................................... */
+/*	#region  ■■■  11. LAYOUTS DE PÁGINA ................................................... */
 /*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 
 /*	Layout container */
@@ -1150,11 +1254,11 @@ img.hero-image {
 	margin-top: calc(var(--p) * 2.8);
 }
 
-.content-body :first-child {
+.content-body > :first-child {
 	margin-top: 0;
 }
 
-.content-body :last-child {
+.content-body > :last-child {
 	margin-bottom: 0;
 }
 
@@ -1197,7 +1301,7 @@ img.hero-image {
 /*	#endregion */
 
 
-/*	#region  ■■■  11. PROJETOS  ........................................................... */
+/*	#region  ■■■  12. PROJETOS  ........................................................... */
 /*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 
 #project .content-hero {
@@ -1239,7 +1343,7 @@ img.hero-image {
 /*	#endregion */
 
 
-/*	#region  ■■■  12. POSTS  .............................................................. */
+/*	#region  ■■■  13. POSTS  .............................................................. */
 /*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 
 #post .content-hero {
@@ -1335,7 +1439,7 @@ img.hero-image {
 /*	#endregion */
 
 
-/*	#region  ■■■  13. PÁGINAS  ............................................................ */
+/*	#region  ■■■  14. PÁGINAS  ............................................................ */
 /*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 
 #page .content-hero {
@@ -1391,9 +1495,10 @@ img.hero-image {
 /*	#endregion */
 
 
-/*	#region  ■■■  14. HOME  ............................................................... */
+/*	#region  ■■■  15. COLEÇÕES  ........................................................... */
 /*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 
+/*	Home */
 .more {
 	display: flex;
 	align-items: center;
@@ -1424,6 +1529,22 @@ img.hero-image {
 	color: var(--color-accent);
 }
 
+/*	Portfolio */
+#case-studies, #personal-projects {
+	scroll-margin-top: calc(var(--nav-height) + var(--content-margin));
+}
+
+/*	Páginas de Coleção */
+h2.section-title {
+	margin-bottom: .25rem;
+	text-wrap: balance;
+}
+
+p.section-description {
+	margin-top: 0;
+	line-height: 1.1;
+}
+
 /*  viewport >= 1152px */
 @media only screen and (min-width: 72em) {
 	.sticky {
@@ -1436,7 +1557,7 @@ img.hero-image {
 /*	#endregion */
 
 
-/*	#region  ■■■  15. RODAPÉ  ............................................................. */
+/*	#region  ■■■  16. RODAPÉ  ............................................................. */
 /*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 
 footer {
@@ -1459,26 +1580,26 @@ footer p {
 	text-wrap: balance;
 }
 
-.social-links, .useful-links {
+.social-links, .footer-navigation {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	column-gap: 1.75em;
 	row-gap: .5em;
 	align-items: center;
-	color: var(--color-support-hc);
-	font-size: var(--h5);
+	color: var(--color-foreground);
 }
 
 .social-links {
-	margin-bottom: 2.5em;
+	font-size: var(--h5);
 }
 
-.useful-links {
-	margin-bottom: 1.25em;
+.footer-navigation {
+	margin: calc(var(--nav-height) - .5rem) 0 1em;
+	font-size: var(--small);
 }
 
-.social-links a, .useful-links a {
+.social-links a, .footer-navigation a {
 	display: flex;
 	column-gap: .375em;
 	align-items: center;
@@ -1491,26 +1612,24 @@ footer p {
 	color: var(--color-support-hc);
 }
 
-.useful-links a {
+.footer-navigation a {
 	color: var(--color-foreground);
 }
 
-.social-links a:hover, .useful-links a:hover {	
+.social-links a:hover, .footer-navigation a:hover {	
 	color: var(--color-accent);
 	text-decoration-color: var(--color-accent);
 }
 
 .social-links svg {
 	height: 1.75em;
-	width: 1.75em;
 }
 
-.useful-links svg {
+.footer-navigation svg {
 	height: 1em;
-	width: 1em;
 }
 
-#bla {
+#footer-links {
 	flex-grow: 1;
 }
 
@@ -1518,49 +1637,23 @@ footer p {
 	display: none;
 }
 
-
 .icon-logo {
 	color: var(--color-support-hc);
-	height: 100%;
-	width: auto;
+	height: 6.75em;
 }
 
 @media only screen and (min-width: 48em) {
 	#footer-logo {
 		display: flex;
-		align-self: start;
-		max-height: 6em;
-		aspect-ratio: 1 / 1;
+		max-height: 6.75em;
 	}
 }
 
 /*	#endregion */
 
 
-
-
-#case-studies, #personal-projects {
-	scroll-margin-top: calc(var(--nav-height) + var(--content-margin));
-}
-
-/*	Cabeçalho de seção */
-h2.section-title {
-	margin-bottom: .25rem;
-	text-wrap: balance;
-}
-
-p.section-description {
-	margin-top: 0;
-	line-height: 1.1;
-}
-
-p a {
-	color: var(--color-accent);
- 	text-decoration-thickness: .125em;
-}
-
-
-/* Easter Egg */
+/*	#region  ■■■  17. TRAPAÇA  ............................................................ */
+/*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 
 .iframe-wrapper {
 	position: relative;
@@ -1579,7 +1672,14 @@ p a {
 	border: none;
 }
 
+/*	#endregion */
+
+
+/*	#region  ■■■  18. GAMBIARRA  .......................................................... */
+/*	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 
 .no-margin {
 	margin: 0;
 }
+
+/*	#endregion */
