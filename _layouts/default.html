@@ -7,8 +7,7 @@
 	<meta name="referrer" content="strict-origin-when-cross-origin">
 	<title>{% if page.url == '/' or page.url == '/index.html' %}{{ site.title }} &ndash; {{ site.description }}{% else %}{{ page.title }} &ndash; {{ site.title }}{% endif %}</title>
 
-	<!--remover o comentário Liquid (#), as tags abaixo e robots.txt na raiz do projeto -->
-	{# % seo title=false % #}
+	<!-- adicionar chaves a seo title=false, remover a tags abaixo e robots.txt na raiz do projeto -->
 	<meta name="robots" content="noindex, nofollow">
 
 	<!-- folhas de estilo -->
