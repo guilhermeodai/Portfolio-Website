@@ -49,7 +49,7 @@ layout: default
 							<img src="{{ item.image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ item.title }} preview">
 						</div>
 						<div class="portfolio-card-info">
-							<h3>Designing a boss health bar for Atlas Fallen</h3>
+							<h3>{{ item.title }}</h3>
 							<ul>
 								<li><small>Problem</small> {{ item.summary-problem | default: '—' }}</li>
 								<li><small>Solution</small> {{ item.summary-solution | default: '—' }}</li>
@@ -63,13 +63,13 @@ layout: default
 		</section>
 		{% endif %}
 
-		{% if site.portfolio-personal and site.portfolio-personal.size > 0 %}
+		{% if site.portfolio-experiments and site.portfolio-experiments.size > 0 %}
 		<section id="personal-projects">
 			<header>
 				<h2 class="section-title">{{ page.personal-title | default: 'Missing Title'}}</h2>
 				<p class="section-description">{{ page.personal-description | default: 'Missing description'}}</p>
 			</header>
-			{% assign personal = site.portfolio-personal | sort: 'date' | reverse %}
+			{% assign personal = site.portfolio-experiments | sort: 'date' | reverse %}
 			<div class="portfolio-grid">
 				{% for item in personal %}
 				<article class="portfolio-card">

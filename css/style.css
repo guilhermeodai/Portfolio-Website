@@ -148,6 +148,7 @@
 	--color-unfocused: #fff;
 	--color-focused: rgba(0,204,102,.08);
 	--color-shadow: rgba(0,204,102,.25);
+	--home-splash: url("../assets/temp/tokyo.jpg");
 }
 
 /* Tema Escuro */
@@ -159,9 +160,10 @@
 	--color-support-lc: #444;
 	--color-support-hc: #c0c0c0;
 	--color-theme-toggle: #4682B4;
-	--color-unfocused: #131313;
+	--color-unfocused: #1d1d1d;
 	--color-focused: rgba(0,255,115,.04);
 	--color-shadow: rgba(0,255,115,.25);
+	--home-splash: url("../assets/temp/kyoto-2.jpg");
 }
 
 /*  viewport >= 480px */
@@ -232,6 +234,10 @@ html, body {
 	font-family: var(--sans-serif);
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -240,7 +246,7 @@ body {
 }
 
 section {
-	margin: var(--content-margin) 0 4em;
+	margin: var(--content-margin) 0 var(--nav-height);
 }
 
 footer {
@@ -904,7 +910,7 @@ svg.icon-itchio {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: var(--grid-gutter);
-	margin-top: 1em;	
+	margin-top: 1em;
 }
 
 
@@ -929,6 +935,7 @@ svg.icon-itchio {
 
 	.portfolio-grid, .sample-portfolio-grid {
 		grid-template-columns: repeat(2, 1fr);
+		margin-top: 0;
 	}
 
 	#related {
@@ -1199,12 +1206,16 @@ img.hero-image {
 	color: var(--color-background);
 }
 
+.content-summary h3 {
+	margin-bottom: 1rem;
+}
+
 .content-summary > p:first-of-type {
 	margin: .875em 0 0;
 	font-size: var(--h3);
 	font-weight: 600;
 	letter-spacing: 0;
-	line-height: 1.15em;
+	line-height: 1.25em;
 }
 
 .content-summary ul {
@@ -1312,7 +1323,7 @@ img.hero-image {
 	margin-bottom: calc(1.4 * var(--p));
 	font-size: var(--h3);
 	letter-spacing: 0;
-	line-height: 1.15em;
+	line-height: 1.25em;
 }
 
 /*  viewport >= 480px */
@@ -1449,8 +1460,9 @@ img.hero-image {
 #page .content-body > p:first-of-type {
 	margin: 0 0 calc(1.4 * var(--p));
 	font-size: var(--h3);
+	font-weight: 600;
 	letter-spacing: 0;
-	line-height: 1.15em;
+	line-height: 1.25em;
 }
 
 /*  viewport >= 768px */
@@ -1678,3 +1690,125 @@ footer p {
 }
 
 /*	#endregion */
+
+
+#splash {
+	background-color: var(--color-foreground);
+	height: calc(100vh - (var(--content-margin) * 2) - var(--nav-height));
+	border-radius: 1.5rem;
+	display: flex;
+
+	background-image: var(--home-splash);
+}
+
+#scream {
+	align-self: end;
+	width: calc(100% + 1rem);
+	margin: 0 -.5rem;
+}
+
+
+#scream h1 {
+	color: var(--color-background);
+	margin: 0 0 -.18em;
+	padding: 0;
+  	overflow: hidden;
+	font-size: clamp(1.5625rem, -0.3831rem + 12.9707vw, 3.5rem);
+	letter-spacing: -.015em;
+	text-align: center;
+  	white-space: nowrap;
+}
+
+.secondary {
+	border-top: .0625em solid var(--color-support-lc);
+	padding: var(--nav-height) 0;
+	margin: 0 auto;
+}
+
+
+@media only screen and (min-width: 30em) {
+	#scream h1 {
+		font-size: clamp(3.375rem, -0.6875rem + 13.5417vw, 4.1875rem);
+	}
+}
+
+@media only screen and (min-width: 48em) {
+	#scream {
+		width: calc(100% + 2rem);
+		margin: 0 -1rem;
+	}
+
+	#scream h1 {
+		font-size: clamp(5rem, -1.3916rem + 13.3159vw, 8.1875rem);
+		letter-spacing: -.02em;
+	}
+}
+
+@media only screen and (min-width: 72em) {
+	#scream {
+		width: calc(100% + 4rem);
+		margin: 0 -2rem;
+	}
+
+	#scream h1 {
+		font-size: clamp(8.8125rem, -0.9816rem + 13.6029vw, 13.4375rem);
+		letter-spacing: -.025em;
+	}
+}
+
+
+
+.accordion-wrapper {
+	margin-top: 2em;
+}
+
+.accordion-header {
+	display: flex;
+	gap: 0.5em;
+	align-items: center;
+	margin: 0 auto;
+	padding: .5em 1em;
+	background: none;
+	border: .0625em solid var(--color-support-lc);
+	border-radius: .5em;
+	color: var(--color-foreground);
+	font-size: var(--p);
+	font-weight: 600;
+}
+
+.accordion-header:hover {
+	background: var(--color-accent);
+	border: .0625em solid var(--color-accent);
+	color: var(--color-background);
+}
+
+.accordion-header::after {
+	content: "▼";
+	margin-left: auto;
+	transition: transform 0.3s ease;
+}
+
+.accordion-header.open::after {
+	transform: rotate(180deg);
+}
+
+.accordion-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.4s ease;
+	will-change: max-height;
+	opacity: 0;
+	transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.accordion-content.open {
+	overflow: visible;
+	opacity: 1;
+}
+
+
+
+
+#projects, #case-studies, #experiments {
+	scroll-margin-top: var(--content-margin);
+}
