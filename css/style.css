@@ -245,6 +245,15 @@ body {
 	min-height: 100vh;
 }
 
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+main {
+	animation: fadeIn 0.5s ease forwards;
+}
+
 section {
 	margin: var(--content-margin) 0 var(--nav-height);
 }
@@ -319,7 +328,7 @@ p a {
 }
 
 h2 + p {
-	margin-top: 0;
+	margin-top: .375em;
 }
 
 li {
@@ -521,7 +530,7 @@ button[type="submit"] {
 	border-radius: .5em;
 	border: none;
 	font-size: var(--p);
-	font-weight: bold;
+	font-weight: 600;
 	letter-spacing: .02em;
 	transition: all 0.3s ease;
 }
@@ -529,6 +538,7 @@ button[type="submit"] {
 button[type="submit"]:hover {
 	background: var(--color-accent);
 	box-shadow: 0 0 .5em .125em var(--color-shadow);
+	text-shadow: 0 0 2em var(--color-foreground);
 }
 
 @keyframes pulse {
@@ -1541,7 +1551,7 @@ img.hero-image {
 }
 
 /*	Portfolio */
-#projects, #case-studies, #experiments {
+#product-design, #case-studies, #side-quests {
 	scroll-margin-top: var(--content-margin);
 }
 
@@ -1552,8 +1562,8 @@ h2.section-title {
 }
 
 p.section-description {
-	margin-top: 0;
-	line-height: 1.1;
+	line-height: 1.15;
+	text-wrap: balance;
 }
 
 /*  viewport >= 1152px */
@@ -1692,13 +1702,10 @@ footer p {
 
 
 #splash {
-	background-color: var(--color-foreground);
-	height: calc(100vh - (var(--content-margin) * 2) - var(--nav-height));
-	height: calc(100dvh - (var(--content-margin) * 2) - var(--nav-height)); /* iOS mala do caralho */
+	background-color: var(--color-accent);
+	height: 33vh;
 	border-radius: 1.5rem;
 	display: flex;
-
-	background-image: var(--home-splash);
 }
 
 #scream {
@@ -1786,6 +1793,11 @@ footer p {
 	background: var(--color-accent);
 	border: .0625em solid var(--color-accent);
 	color: var(--color-background);
+	text-shadow: 0 0 2rem var(--color-foreground);
+}
+
+.accordion-header:hover svg.icon-arrow {
+	filter: drop-shadow(0 0 .75rem var(--color-foreground));
 }
 
 .accordion-content {
@@ -1808,11 +1820,3 @@ footer p {
 
 
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-main {
-  animation: fadeIn 0.5s ease forwards;
-}

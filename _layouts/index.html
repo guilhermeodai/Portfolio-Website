@@ -12,7 +12,7 @@ layout: default
 	</div>
 
 	{% if site.portfolio-projects and site.portfolio-projects.size > 0 %}
-	<div id="projects" class="grid-container secondary">
+	<div id="product-design" class="grid-container secondary">
 		<div class="col-4">
 			<header class="sticky">
 				<h2 class="section-title">{{ page.projects-title | default: 'Missing title'}}</h2>
@@ -104,9 +104,9 @@ layout: default
 						<div class="portfolio-card-info">
 							<h3>{{ item.title }}</h3>
 							<ul>
-								<li><small>Problem</small> {{ item.summary-problem | default: '—' }}</li>
-								<li><small>Solution</small> {{ item.summary-solution | default: '—' }}</li>
-								<li><small>Outcome</small> {{ item.summary-outcome | default: '—' }}</li>
+								<li><small>Challenge</small> {{ item.card-problem | default: '—' }}</li>
+								<li><small>Solution</small> {{ item.card-solution | default: '—' }}</li>
+								<li><small>Outcome</small> {{ item.card-outcome | default: '—' }}</li>
 							</ul>
 						</div>
 					</a>
@@ -131,7 +131,7 @@ layout: default
 								<div class="portfolio-card-info">
 									<h3>{{ item.title }}</h3>
 									<ul>
-										<li><small>Problem</small> {{ item.summary-problem | default: '—' }}</li>
+										<li><small>Challenge</small> {{ item.summary-problem | default: '—' }}</li>
 										<li><small>Solution</small> {{ item.summary-solution | default: '—' }}</li>
 										<li><small>Outcome</small> {{ item.summary-outcome | default: '—' }}</li>
 									</ul>
@@ -149,7 +149,7 @@ layout: default
 	{% endif %}
 
 	{% if site.portfolio-experiments and site.portfolio-experiments.size > 0 %}
-	<div id="experiments" class="grid-container secondary">
+	<div id="side-quests" class="grid-container secondary">
 		<div class="col-4">
 			<header class="sticky">
 				<h2 class="section-title">{{ page.experiments-title | default: 'Missing title'}}</h2>

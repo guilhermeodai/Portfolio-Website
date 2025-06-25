@@ -2,11 +2,11 @@
 [ ] Apresentação pessoal (Home/Portfolio)
 [ ] Logo (Navegação)
 [ ] Galeria de imagens (plugin?)
-[ ] Estrutura do resumo de projeto
-[ ] Estrutura do card de estudo de caso
-[ ] Estrutura do resumo de estudo de caso
-[ ] Estrutura do card de projeto pessoal
-[ ] Estrutura do resumo de projeto pessoal
+[x] Estrutura do resumo de projeto
+[x] Estrutura do card de estudo de caso
+[x] Estrutura do resumo de estudo de caso
+[x] Estrutura do card de projeto pessoal
+[x] Estrutura do resumo de projeto pessoal
 
 [ ] Redimensionamento automático de imagens
 

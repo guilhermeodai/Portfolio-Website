@@ -1,16 +1,16 @@
 ---
 layout: index
 
-projects-title: "UI Design Showcase"
-projects-description: "Selected works in UI Design for games and websites, focusing on the final delivery"
+projects-title: "Product Design"
+projects-description: "Shipped projects that demanded me every tool in the box: wireframing, prototyping, visual design, and more"
 projects-all: "Load all projects"
 
-cases-title: "UX Case Studies"
-cases-description: "Detailed explorations of problems, processes, and impactful results"
+cases-title: "Case Studies"
+cases-description: "Detailed analysis of problems, processes, and impactful results, with a focus on the UX side"
 cases-all: "Load all case studies"
 
-experiments-title: "Experiments"
-experiments-description: "Personal projects made for fun, to challenge myself or just to learn something new"
+experiments-title: "Side Quests"
+experiments-description: "Personal projects, academic work, and canceled ideas that never saw daylight"
 experiments-all: "Load all experiments"
 
 articles-title: "Latest Articles"
