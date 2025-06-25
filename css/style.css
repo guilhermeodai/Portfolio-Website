@@ -1514,36 +1514,34 @@ img.hero-image {
 .more {
 	display: flex;
 	align-items: center;
-	margin: calc(var(--grid-gutter) - .75em) auto 0;
+	margin: var(--grid-gutter) auto 0;
 	gap: 1.5em;
 }
 
-.more::before,
-.more::after {
-	content: "";
-	flex: 1;
-	height: .0625em;
-	background-color: var(--color-support-lc);
-}
-
-.more a {
-	display: inline-flex;
+.more a {	
+	display: flex;
+	gap: 0.375em;
 	align-items: center;
-	gap: 0.25em;
+	margin: 0 auto;
+	padding: .5em 1em;
+	background: none;
+	border: .0625em solid var(--color-support-lc);
+	border-radius: .5em;
 	color: var(--color-foreground);
 	font-size: var(--p);
 	font-weight: 600;
 	text-decoration: none;
-	white-space: nowrap;
 }
 
 .more a:hover {
-	color: var(--color-accent);
+	background: var(--color-accent);
+	border: .0625em solid var(--color-accent);
+	color: var(--color-background);
 }
 
 /*	Portfolio */
-#case-studies, #personal-projects {
-	scroll-margin-top: calc(var(--nav-height) + var(--content-margin));
+#projects, #case-studies, #experiments {
+	scroll-margin-top: var(--content-margin);
 }
 
 /*	Páginas de Coleção */
@@ -1695,6 +1693,7 @@ footer p {
 #splash {
 	background-color: var(--color-foreground);
 	height: calc(100vh - (var(--content-margin) * 2) - var(--nav-height));
+	height: calc(100dvh - (var(--content-margin) * 2) - var(--nav-height)); /* iOS mala do caralho */
 	border-radius: 1.5rem;
 	display: flex;
 
@@ -1764,7 +1763,7 @@ footer p {
 
 .accordion-header {
 	display: flex;
-	gap: 0.5em;
+	gap: 0.375em;
 	align-items: center;
 	margin: 0 auto;
 	padding: .5em 1em;
@@ -1809,6 +1808,15 @@ footer p {
 
 
 
-#projects, #case-studies, #experiments {
-	scroll-margin-top: var(--content-margin);
+
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+main {
+  animation: fadeIn 0.5s ease forwards;
 }

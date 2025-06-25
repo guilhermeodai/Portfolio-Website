@@ -32,3 +32,15 @@ if (mediaQuery.matches) {
 	mainMenu.classList.remove("open");
 	hamburger.setAttribute("aria-expanded", false);
 }
+
+// Teste: fecha menu ao clicar em qualquer link dentro do menu
+const links = mainMenu.querySelectorAll("a");
+links.forEach(link => {
+	link.addEventListener("click", () => {
+		console.log("Link clicado, fechando menu");
+		mainMenu.classList.remove("open");
+		hamburger.classList.remove("open");
+		hamburger.setAttribute("aria-expanded", false);
+		document.body.classList.remove("no-scroll");
+	});
+});

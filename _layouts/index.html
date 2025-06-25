@@ -15,18 +15,13 @@ layout: default
 	<div id="projects" class="grid-container secondary">
 		<div class="col-4">
 			<header class="sticky">
-				<h2 class="section-title">{{ page.projects-title | default: 'Missing Title'}}</h2>
+				<h2 class="section-title">{{ page.projects-title | default: 'Missing title'}}</h2>
 				<p class="section-description">{{ page.projects-description | default: 'Missing description'}}</p>
 			</header>
 		</div>
-		{% assign featured_projects = site.portfolio-projects | where: "featured", true | sort: "date" | reverse %}
-		{% assign fallback_projects = site.portfolio-projects | sort: "date" | reverse %}
-
-		{% if featured_projects.size > 0 %}
-		{% assign projects = featured_projects %}
-		{% else %}
-		{% assign projects = fallback_projects %}
-		{% endif %}
+		{% assign featured = site.portfolio-projects | where: "featured", true | sort: "order" %}
+		{% assign not_featured = site.portfolio-projects | where_exp: "item", "item.featured != true" | sort: "order" %}
+		{% assign projects = featured | concat: not_featured %}
 		<section class="col-8 no-margin">
 			<div class="sample-portfolio-grid">
 				{% for item in projects limit:2 %}
@@ -47,8 +42,9 @@ layout: default
 				</article>
 				{% endfor %}
 			</div>
+			{% if site.portfolio-projects.size > 2 %}
 			<div class="accordion-wrapper">
-				<button class="accordion-header">{{ page.projects-all | default: 'All projects'}}</button>
+				<button class="accordion-header">{{ page.projects-all | default: 'Missing label'}}</button>
 				<div class="accordion-content">
 					<div class="sample-portfolio-grid">
 						{% for item in projects offset:2 %}
@@ -71,6 +67,7 @@ layout: default
 					</div>
 				</div>
 			</div>
+			{% endif %}
 
 		</section>
 	</div>
@@ -80,12 +77,12 @@ layout: default
 	<div id="case-studies" class="grid-container secondary">
 		<div class="col-4">
 			<header class="sticky">
-				<h2 class="section-title">UX Case Studies</h2>
-				<p class="section-description">Detailed explorations of problems, processes, and impactful results</p>
+				<h2 class="section-title">{{ page.cases-title | default: 'Missing title'}}</h2>
+				<p class="section-description">{{ page.cases-description | default: 'Missing description'}}</p>
 			</header>
 		</div>
-		{% assign featured_cases = site.portfolio-cases | where: "featured", true | sort: "date" | reverse %}
-		{% assign fallback_cases = site.portfolio-cases | sort: "date" | reverse %}
+		{% assign featured_cases = site.portfolio-cases | where: "featured", true | sort: "order" %}
+		{% assign fallback_cases = site.portfolio-cases | sort: "order" %}
 
 		{% if featured_cases.size > 0 %}
 		{% assign cases = featured_cases %}
@@ -112,8 +109,9 @@ layout: default
 				</article>
 				{% endfor %}
 			</div>
+			{% if site.portfolio-cases.size > 2 %}
 			<div class="accordion-wrapper">
-				<button class="accordion-header">{{ page.cases-all | default: 'All case studies'}}</button>
+				<button class="accordion-header">{{ page.cases-all | default: 'Missing label'}}</button>
 				<div class="accordion-content">
 					<div class="sample-portfolio-grid">
 						{% for item in cases offset:2 %}
@@ -136,6 +134,7 @@ layout: default
 					</div>
 				</div>
 			</div>
+			{% endif %}
 
 		</section>
 	</div>
@@ -145,12 +144,12 @@ layout: default
 	<div id="experiments" class="grid-container secondary">
 		<div class="col-4">
 			<header class="sticky">
-				<h2 class="section-title">{{ page.experiments-title | default: 'Missing Title'}}</h2>
+				<h2 class="section-title">{{ page.experiments-title | default: 'Missing title'}}</h2>
 				<p class="section-description">{{ page.experiments-description | default: 'Missing description'}}</p>
 			</header>
 		</div>
-		{% assign featured_experiment = site.portfolio-experiments | where: "featured", true | sort: "date" | reverse %}
-		{% assign fallback_experiment = site.portfolio-experiments | sort: "date" | reverse %}
+		{% assign featured_experiment = site.portfolio-experiments | where: "featured", true | sort: "order" %}
+		{% assign fallback_experiment = site.portfolio-experiments | sort: "order" %}
 
 		{% if featured_experiment.size > 0 %}
 		{% assign experiment = featured_experiment %}
@@ -177,8 +176,9 @@ layout: default
 				</article>
 				{% endfor %}
 			</div>
+			{% if site.portfolio-experiments.size > 2 %}
 			<div class="accordion-wrapper">
-				<button class="accordion-header">{{ page.experiment-all | default: 'All experiments'}}</button>
+				<button class="accordion-header">{{ page.experiments-all | default: 'Missing label'}}</button>
 				<div class="accordion-content">
 					<div class="sample-portfolio-grid">
 						{% for item in experiment offset:2 %}
@@ -201,17 +201,18 @@ layout: default
 					</div>
 				</div>
 			</div>
+			{% endif %}
 
 		</section>
 	</div>
 	{% endif %}
 
 	{% if site.posts and site.posts.size > 0 %}
-	<div class="grid-container secondary">
+	<!-- 	<div class="grid-container secondary">
 		<div class="col-4">
 			<header class="sticky">
-				<h2 class="section-title">Latest Articles</h2>
-				<p class="section-description">Thoughts, rants, insights, who knows?</p>
+				<h2 class="section-title">{{ page.articles-title | default: 'Missing title'}}</h2>
+				<p class="section-description">{{ page.articles-description | default: 'Missing description'}}</p>
 			</header>
 		</div>
 		{% assign blog = site.posts | sort: 'date' | reverse %}
@@ -237,14 +238,14 @@ layout: default
 				{% endfor %}
 			</div>
 			<div class="more">
-				<a href="{{ '/articles/' | relative_url }}">All articles
+				<a href="{{ '/articles/' | relative_url }}">{{ page.articles-all | default: 'Missing label'}}
 					<svg class="icon-arrow">
 						<use href="#icon-arrow"></use>
 					</svg>
 				</a>
 			</div>
 		</section>
-	</div>
+	</div> -->
 	{% endif %}
 
 	{% include footer.html %}

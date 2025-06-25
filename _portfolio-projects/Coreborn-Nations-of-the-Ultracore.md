@@ -1,6 +1,7 @@
 ---
 title: "Coreborn: Nations of the Ultracore"
 description: ""
+order: 1
 featured: false
 
 hero-image: #/assets/images/

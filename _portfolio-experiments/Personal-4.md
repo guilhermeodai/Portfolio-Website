@@ -1,6 +1,7 @@
 ---
 title: "Personal #3"
 description: ""
+order: 4
 featured: false
 
 hero-image: #/assets/images/

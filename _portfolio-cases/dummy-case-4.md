@@ -1,6 +1,7 @@
 ---
 title: "Case #4"
 description: ""
+order: 4
 featured: false
 
 hero-image: #/assets/images/

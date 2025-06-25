@@ -70,21 +70,25 @@ defaults:
       type: "portfolio-cases"
     values:
       layout: "portfolio-case"
+      order: 99
   -
     scope:
       path: ""
       type: "portfolio-experiments"
     values:
       layout: "portfolio-experiment"
+      order: 99
   -
     scope:
       path: ""
       type: "portfolio-projects"
     values:
       layout: "portfolio-project"
+      order: 99
 
 exclude:
   - templates/
+  - _To-Do.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -1,6 +1,7 @@
 ---
 title: "Designing a boss health bar in Atlas Fallen"
 description: ""
+order: 1
 featured: false
 
 hero-image: #/assets/images/

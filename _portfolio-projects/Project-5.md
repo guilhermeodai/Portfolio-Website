@@ -1,6 +1,7 @@
 ---
 title: "Project #5"
 description: ""
+order: 5
 featured: false
 
 hero-image: #/assets/images/
