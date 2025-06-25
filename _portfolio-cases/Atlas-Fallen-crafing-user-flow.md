@@ -4,7 +4,7 @@ description: ""
 order: 2
 featured: false
 
-image: /assets/images/case-studies/atlas-fallen-crafting-user-flow/hero.jpg
+image: /assets/images/case-studies/Atlas-Fallen-crafting-user-flow/hero.jpg
 image-caption: ""
 
 card-problem: ""

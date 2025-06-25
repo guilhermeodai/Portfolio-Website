@@ -4,7 +4,7 @@ description: ""
 order: 1
 featured: false
 
-image: /assets/images/case-studies/atlas-fallen-boss-health-bar/hero-image.jpg
+image: /assets/images/case-studies/Atlas-Fallen-boss-health-bar/hero-image.jpg
 image-caption: ""
 
 card-problem: "Add multiple heathbars to the HUD in the least obtrusive way possible"
