@@ -1322,6 +1322,7 @@ img.hero-image {
 #project .content-body > p:first-of-type {
 	margin-bottom: calc(1.4 * var(--p));
 	font-size: var(--h3);
+	font-weight: 600;
 	letter-spacing: 0;
 	line-height: 1.25em;
 }
@@ -1775,20 +1776,16 @@ footer p {
 	font-weight: 600;
 }
 
+.accordion-header svg.icon-arrow {
+	display: inline-block;
+	margin-top: 0;
+	transform: rotate(90deg);
+}
+
 .accordion-header:hover {
 	background: var(--color-accent);
 	border: .0625em solid var(--color-accent);
 	color: var(--color-background);
-}
-
-.accordion-header::after {
-	content: "▼";
-	margin-left: auto;
-	transition: transform 0.3s ease;
-}
-
-.accordion-header.open::after {
-	transform: rotate(180deg);
 }
 
 .accordion-content {
@@ -1804,7 +1801,6 @@ footer p {
 	overflow: visible;
 	opacity: 1;
 }
-
 
 
 

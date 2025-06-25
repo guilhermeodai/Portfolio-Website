@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const themeToggle = document.getElementById("theme-toggle");
 	const currentTheme = localStorage.getItem("theme") || "light";
-	
+
 	document.documentElement.setAttribute("data-theme", currentTheme);
 	if (currentTheme === "dark") {
 		themeToggle.checked = true;

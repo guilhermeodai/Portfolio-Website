@@ -1,8 +1,8 @@
 ---
 layout: index
 
-projects-title: "Product Design Showcase"
-projects-description: "Selected works in gaming, web and UI design, focusing on the final delivery"
+projects-title: "UI Design Showcase"
+projects-description: "Selected works in UI Design for games and websites, focusing on the final delivery"
 projects-all: "Load all projects"
 
 cases-title: "UX Case Studies"
