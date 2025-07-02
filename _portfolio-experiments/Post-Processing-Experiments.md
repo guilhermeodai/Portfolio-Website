@@ -8,7 +8,7 @@ image: /assets/images/experiments/Post-Processing-Experiments/fuji.jpg
 image-caption: ""
 summary-description: "Photo collection"
 summary-reason: "Personal project"
-summary-role: "Photographer, Color Grading Artist"
+summary-role: "Photographer, Editor"
 summary-tools: "Photoshop"
 ---
 
