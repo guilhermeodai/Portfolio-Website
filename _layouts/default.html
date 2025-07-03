@@ -46,15 +46,13 @@
 	<header id="site-header">
 		<nav id="main-navigation" role="navigation">
 			<div id="logo">
-				<a href="{{ '/#start' | relative_url }}">
-					Guilherme Almeida
-				</a>
+				<a href="{% if page.url == '/' %}{{ '/#start' | relative_url }}{% elsif page.url != '/' %}{{ '/' | relative_url }}{% endif %}">Gui Odai</a>
 			</div>
 			<ul id="main-menu">
 				<li><a href="{{ '/#product-design' | relative_url }}">Product Design</a></li>
 				<li><a href="{{ '/#case-studies' | relative_url }}">Case Studies</a></li>
 				<li><a href="{{ '/#side-quests' | relative_url }}">Side Quests</a></li>
-				<li><a href="{{ '/about/' | relative_url }}">About</a></li>
+				<li><a href="{{ '/about/' | relative_url }}" class="{% if page.url == '/about/' %}active{% endif %}">About</a></li>
 				<li class="social">
 					<a href="{{ 'https://www.linkedin.com/in/guilherme-odai/' | absolute_url }}" target="_blank" rel="noopener noreferrer" class="icon" aria-label="LinkedIn Profile">
 						<svg class="icon-linkedin">
