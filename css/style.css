@@ -1710,6 +1710,7 @@ footer p {
 	width: 100%;
 	max-width: var(--content-width);
 	min-height: calc(100vh - var(--nav-height) - (2 * var(--content-margin)));
+	min-height: calc(100dvh - var(--nav-height) - (2 * var(--content-margin)));
 	margin: calc(var(--nav-height) + var(--content-margin)) auto var(--content-margin);
 }
 
