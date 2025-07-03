@@ -1,6 +1,10 @@
 ---
 layout: index
 
+button-portfolio: "To Portfolio"
+button-linkedin: "Let's connect"
+button-about: "Profile"
+
 projects-title: "Product Design"
 projects-description: "Shipped projects that demanded me every tool in the box: wireframing, prototyping, visual design, and more"
 projects-all: "Load all projects"
