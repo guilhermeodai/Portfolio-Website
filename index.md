@@ -1,7 +1,7 @@
 ---
 layout: index
 
-button-portfolio: "To Portfolio"
+button-portfolio: "To portfolio"
 button-linkedin: "Let's connect"
 button-about: "Profile"
 

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-	const headers = document.querySelectorAll(".accordion-header");
+	const headers = document.querySelectorAll(".accordion-button");
 
 	headers.forEach(header => {
 		const content = header.nextElementSibling;

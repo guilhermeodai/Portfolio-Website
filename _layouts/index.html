@@ -8,22 +8,31 @@ layout: default
 			<svg class="icon-logo">
 				<use href="#icon-logo"></use>
 			</svg>
+			<div class="row">
+				<svg class="left-corner">
+					<use href="#left-corner"></use>
+				</svg>
+				<div class="text">
+					<h1>Guilherme Almeida<br /><span>UI/UX Designer</span><br /><span>Game Developer</span></h1>
+				</div>
+				<svg class="right-corner">
+					<use href="#right-corner"></use>
+				</svg>
+			</div>
 		</header>
-		<div id="description">
-			<h1>Guilherme Almeida<br /><span class="subdued">UI/UX Designer</span><br /><span class="subdued">Game Developer</span></h1>
-		</div>
+
 		<div id="cta">
-			<a class="cta-button" href="{{ '/#product-design' | relative_url }}">To Portfolio
+			<a class="cta-button" href="{{ '/#product-design' | relative_url }}">{{ page.button-portfolio | default: 'Missing label'}}
 				<svg class="icon-arrow">
 					<use href="#icon-arrow"></use>
 				</svg>
 			</a>
-			<a class="cta-button" href="{{ 'https://www.linkedin.com/in/guilherme-odai/' | absolute_url }}" target="_blank" rel="noopener noreferrer">Let's connect
+			<a class="cta-button" href="{{ 'https://www.linkedin.com/in/guilherme-odai/' | absolute_url }}" target="_blank" rel="noopener noreferrer">{{ page.button-linkedin | default: 'Missing label'}}
 				<svg class="icon-linkedin">
 					<use href="#icon-linkedin"></use>
 				</svg>
 			</a>
-			<a class="cta-button" href="{{ '/about/' | relative_url }}">About Me</a>
+			<a class="cta-button" href="{{ '/about/' | relative_url }}">{{ page.button-about | default: 'Missing label'}}</a>
 		</div>
 	</section>
 
@@ -60,7 +69,7 @@ layout: default
 			</div>
 			{% if site.portfolio-projects.size > 2 %}
 			<div class="accordion-wrapper">
-				<button class="accordion-header">{{ page.projects-all | default: 'Missing label'}}
+				<button class="accordion-button">{{ page.projects-all | default: 'Missing label'}}
 					<svg class="icon-arrow">
 						<use href="#icon-arrow"></use>
 					</svg>
@@ -131,7 +140,7 @@ layout: default
 			</div>
 			{% if site.portfolio-cases.size > 2 %}
 			<div class="accordion-wrapper">
-				<button class="accordion-header">{{ page.cases-all | default: 'Missing label'}}
+				<button class="accordion-button">{{ page.cases-all | default: 'Missing label'}}
 					<svg class="icon-arrow">
 						<use href="#icon-arrow"></use>
 					</svg>
@@ -202,7 +211,7 @@ layout: default
 			</div>
 			{% if site.portfolio-experiments.size > 2 %}
 			<div class="accordion-wrapper">
-				<button class="accordion-header">{{ page.experiments-all | default: 'Missing label'}}
+				<button class="accordion-button">{{ page.experiments-all | default: 'Missing label'}}
 					<svg class="icon-arrow">
 						<use href="#icon-arrow"></use>
 					</svg>
