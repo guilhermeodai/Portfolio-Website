@@ -1782,6 +1782,7 @@ footer p {
 	height: 10vh;
 	min-height: 4rem;
 	margin: calc(var(--logo-padding-mobile) * .875) 0 calc(var(--logo-padding-mobile) * .875 - 1.5rem) var(--logo-padding-mobile);
+	transition: color 0.3s ease;
 }
 
 .row {
@@ -1797,6 +1798,7 @@ footer p {
 	align-self: flex-start;
 	height: 1.5em;
 	color: var(--color-background);
+	transition: color 0.3s ease;
 	transform: rotate(90deg);
 }
 
