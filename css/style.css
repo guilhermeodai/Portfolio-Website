@@ -135,6 +135,8 @@
 	--body-padding: 1.5rem;
 	--nav-height: 3.25rem;
 	--fluid-padding-h: clamp(1rem, 8%, 4rem);
+	--logo-padding-mobile: clamp(2rem, 1.6429rem + 1.7857vw, 2.5rem);
+	--logo-padding: calc(clamp(1.5rem, -1.3966rem + 6.0345vw, 5rem) + 1.5rem);
 }
 
 /* Tema Claro */
@@ -223,6 +225,7 @@ progress {vertical-align: baseline;}
 ::-webkit-search-decoration {-webkit-appearance: none;}
 ::-webkit-file-upload-button {-webkit-appearance: button; font: inherit;}
 summary {display: list-item;}
+svg {transition: color 0.3s ease;}
 
 /*	#endregion */
 
@@ -568,8 +571,6 @@ button[type="submit"]:focus {
 	}
 }
 
-
-
 /*	#endregion */
 
 
@@ -585,11 +586,6 @@ svg {
 	width: auto;
 	vertical-align: middle;
 	aspect-ratio: 1 / 1;
-}
-
-svg.icon-arrow {
-	height: .67em;
-	margin-top: .0625em;
 }
 
 svg.icon-itchio {
@@ -646,31 +642,14 @@ svg.icon-itchio {
 
 #logo a:hover {
 	color: var(--color-background);
-	animation: rainbow-trail 0.5s steps(7) forwards;
+	animation: shadow-trail 0.3s steps(7) forwards;
+	animation-timing-function: ease-out;
 }
 
 #logo a:focus {
 	outline: none;
 	color: var(--color-accent);
 }
-
-#logo a::after {
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 0.375rem;
-	background-color: var(--color-foreground);
-	transform: scaleX(0);
-	transition: transform 0.3s ease;
-	transform-origin: bottom center;
-}
-
-/* #logo a:hover::after,
-#logo a.active::after {
-	transform: scaleX(1);
-} */
 
 #hamburger-menu {
 	display: flex;
@@ -718,11 +697,16 @@ svg.icon-itchio {
 	left: 0;
 	width: 100vw;
 	height: calc(100vh - var(--nav-height));
-	height: calc(100dvh - var(--nav-height)); /* iOS mala do caralho */
 	margin: 0;
 	padding: var(--nav-height) var(--body-padding) calc(var(--nav-height) * 1.25);
 	background-color: var(--color-background);
 	list-style: none;
+}
+
+@supports (height: 100dvh) {
+	#main-menu {
+		height: calc(100dvh - var(--nav-height));
+	}
 }
 
 #main-menu.open {
@@ -1214,10 +1198,12 @@ svg.icon-itchio {
 		transform: scale(1.03);
 	}
 
-	.portfolio-card a:focus,
-	.blog-card a:focus {
+	.portfolio-card:focus-within,
+	.blog-card:focus-within {
 		outline: none;
-		filter: url('#duotone-green');
+		border: .0625em solid var(--color-accent);
+		box-shadow: 0 0 .5em .125em var(--color-shadow);
+		transform: scale(1.03);
 	}
 }
 
@@ -1599,7 +1585,6 @@ img.hero-image {
 
 .more a:focus {
 	outline: none;
-	background: var(--color-focused);
 	border-color: var(--color-accent);
 	box-shadow: 0 0 .5em .125em var(--color-shadow);
 }
@@ -1795,8 +1780,8 @@ footer p {
 #hero .icon-logo {
 	color: var(--color-background);
 	height: 10vh;
-	min-height: 5rem;
-	margin: -.75em clamp(1.5rem, 0.686rem + 4.0698vw, 5rem) 1em;
+	min-height: 4rem;
+	margin: calc(var(--logo-padding-mobile) * .875) 0 calc(var(--logo-padding-mobile) * .875 - 1.5rem) var(--logo-padding-mobile);
 }
 
 .row {
@@ -1856,12 +1841,6 @@ footer p {
 	text-decoration: none;
 }
 
-.cta-button svg.icon-arrow {
-	display: inline-block;
-	margin-top: 0;
-	transform: rotate(90deg);
-}
-
 .cta-button:hover {
 	background: var(--color-accent);
 	border: .0625em solid var(--color-accent);
@@ -1871,13 +1850,8 @@ footer p {
 
 .cta-button:focus {
 	outline: none;
-	background: var(--color-focused);
 	border-color: var(--color-accent);
 	box-shadow: 0 0 .5em .125em var(--color-shadow);
-}
-
-.cta-button:hover svg.icon-arrow {
-	filter: drop-shadow(0 0 .75rem var(--color-foreground));
 }
 
 @media only screen and (min-width: 48em) {
@@ -1886,9 +1860,8 @@ footer p {
 	}
 
 	#hero .icon-logo {
-		height: 12vh;
-		min-height: 6rem;
-		margin: -.75em 0 3rem calc(clamp(1.5rem, -1.3966rem + 6.0345vw, 5rem) + 1.5rem);
+		min-height: 5rem;
+		margin: calc(var(--logo-padding) * .6) 0 calc(var(--logo-padding) * .6) var(--logo-padding);
 	}
 	
 	.row {
@@ -1953,12 +1926,6 @@ footer p {
 	font-weight: 600;
 }
 
-.accordion-button svg.icon-arrow {
-	display: inline-block;
-	margin-top: 0;
-	transform: rotate(90deg);
-}
-
 .accordion-button:hover {
 	background: var(--color-accent);
 	border: .0625em solid var(--color-accent);
@@ -1968,13 +1935,8 @@ footer p {
 
 .accordion-button:focus {
 	outline: none;
-	background: var(--color-focused);
 	border-color: var(--color-accent);
 	box-shadow: 0 0 .5em .125em var(--color-shadow);
-}
-
-.accordion-button:hover svg.icon-arrow {
-	filter: drop-shadow(0 0 .75rem var(--color-foreground));
 }
 
 .accordion-content {
@@ -2035,14 +1997,6 @@ footer p {
 	margin: 0;
 }
 
-.svg-filters {
-	height: 0;
-	width: 0;
-	margin: 0;
-	padding: 0;
-}
-
-
 ::selection {
 	background-color: transparent;
 	color: var(--color-foreground);
@@ -2050,42 +2004,39 @@ footer p {
 }
 
 
-
-@keyframes rainbow-trail {
+@keyframes shadow-trail {
 	0% {
 		text-shadow: none;
 	}
-	5% {
-		text-shadow: 2px -1px 1px var(--color-foreground);
-	}
 	10% {
-		text-shadow: 2px -1px 1px var(--color-foreground), 4px -2px 1px var(--color-foreground);
-	}
-	15% {
-		text-shadow: 2px -1px 1px var(--color-foreground), 4px -2px 1px var(--color-foreground), 6px -3px 1px var(--color-foreground);
+		text-shadow: 1px -.5px var(--color-foreground);
 	}
 	20% {
-		text-shadow: 2px -1px 1px var(--color-foreground), 4px -2px 1px var(--color-foreground), 6px -3px 1px var(--color-foreground), 8px -4px 1px var(--color-foreground);
+		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground);
 	}
 	30% {
-		text-shadow: 2px -1px 1px var(--color-foreground), 4px -2px 1px var(--color-foreground), 6px -3px 1px var(--color-foreground), 8px -4px 1px var(--color-foreground), 10px -5px 1px var(--color-foreground);
+		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground);
 	}
 	40% {
-		text-shadow: 2px -1px 1px var(--color-foreground), 4px -2px 1px var(--color-foreground), 6px -3px 1px var(--color-foreground), 8px -4px 1px var(--color-foreground), 10px -5px 1px var(--color-foreground), 12px -6px 1px var(--color-foreground);
+		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground);
 	}
 	50% {
-		text-shadow: 2px -1px 1px var(--color-foreground), 4px -2px 1px var(--color-foreground), 6px -3px 1px var(--color-foreground), 8px -4px 1px var(--color-foreground), 10px -5px 1px var(--color-foreground), 12px -6px 1px var(--color-foreground), 14px -7px 1px var(--color-foreground);
+		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground), 5px -2.5px var(--color-foreground);
 	}
 	60% {
-		text-shadow: 2px -1px 1px var(--color-foreground), 4px -2px 1px var(--color-foreground), 6px -3px 1px var(--color-foreground), 8px -4px 1px var(--color-foreground), 10px -5px 1px var(--color-foreground), 12px -6px 1px var(--color-foreground), 14px -7px 1px var(--color-foreground), 16px -8px 1px var(--color-foreground);
+		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground), 5px -2.5px var(--color-foreground), 6px -3px var(--color-foreground);
 	}
 	70% {
-		text-shadow: 2px -1px 1px var(--color-foreground), 4px -2px 1px var(--color-foreground), 6px -3px 1px var(--color-foreground), 8px -4px 1px var(--color-foreground), 10px -5px 1px var(--color-foreground), 12px -6px 1px var(--color-foreground), 14px -7px 1px var(--color-foreground), 16px -8px 1px var(--color-foreground), 18px -9px 1px var(--color-foreground);
+		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground), 5px -2.5px var(--color-foreground), 6px -3px var(--color-foreground), 7px -3.5px var(--color-foreground);
 	}
 	80% {
-		text-shadow: 2px -1px 1px var(--color-foreground), 4px -2px 1px var(--color-foreground), 6px -3px 1px var(--color-foreground), 8px -4px 1px var(--color-foreground), 10px -5px 1px var(--color-foreground), 12px -6px 1px var(--color-foreground), 14px -7px 1px var(--color-foreground), 16px -8px 1px var(--color-foreground), 18px -9px 1px var(--color-foreground), 20px -10px 1px var(--color-foreground);
+		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground), 5px -2.5px var(--color-foreground), 6px -3px var(--color-foreground), 7px -3.5px var(--color-foreground), 8px -4px var(--color-foreground);
+	}
+	90% {
+		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground), 5px -2.5px var(--color-foreground), 6px -3px var(--color-foreground), 7px -3.5px var(--color-foreground), 8px -4px var(--color-foreground), 9px -4.5px var(--color-foreground);
 	}
 	100% {
-		text-shadow: 2px -1px 1px var(--color-foreground), 4px -2px 1px var(--color-foreground), 6px -3px 1px var(--color-foreground), 8px -4px 1px var(--color-foreground), 10px -5px 1px var(--color-foreground), 12px -6px 1px var(--color-foreground), 14px -7px 1px var(--color-foreground), 16px -8px 1px var(--color-foreground), 18px -9px 1px var(--color-foreground), 20px -10px 1px var(--color-foreground);
+		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground), 5px -2.5px var(--color-foreground), 6px -3px var(--color-foreground), 7px -3.5px var(--color-foreground), 8px -4px var(--color-foreground), 9px -4.5px var(--color-foreground), 10px -5px var(--color-foreground);
 	}
 }
+

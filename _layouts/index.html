@@ -21,11 +21,7 @@ layout: default
 			</div>
 		</header>
 		<div id="cta">
-			<a class="cta-button" href="{{ '/#product-design' | relative_url }}">{{ page.button-portfolio | default: 'Missing label'}}
-				<svg class="icon-arrow">
-					<use href="#icon-arrow"></use>
-				</svg>
-			</a>
+			<a class="cta-button" href="{{ '/#product-design' | relative_url }}">{{ page.button-portfolio | default: 'Missing label'}}</a>
 			<a class="cta-button" href="{{ 'https://www.linkedin.com/in/guilherme-odai/' | absolute_url }}" target="_blank" rel="noopener noreferrer">{{ page.button-linkedin | default: 'Missing label'}}
 				<svg class="icon-linkedin">
 					<use href="#icon-linkedin"></use>
@@ -68,11 +64,7 @@ layout: default
 			</div>
 			{% if site.portfolio-projects.size > 2 %}
 			<div class="accordion-wrapper">
-				<button class="accordion-button">{{ page.projects-all | default: 'Missing label'}}
-					<svg class="icon-arrow">
-						<use href="#icon-arrow"></use>
-					</svg>
-				</button>
+				<button class="accordion-button">{{ page.projects-all | default: 'Missing label'}}</button>
 				<div class="accordion-content">
 					<div class="sample-portfolio-grid">
 						{% for item in projects offset:2 %}
@@ -139,11 +131,7 @@ layout: default
 			</div>
 			{% if site.portfolio-cases.size > 2 %}
 			<div class="accordion-wrapper">
-				<button class="accordion-button">{{ page.cases-all | default: 'Missing label'}}
-					<svg class="icon-arrow">
-						<use href="#icon-arrow"></use>
-					</svg>
-				</button>
+				<button class="accordion-button">{{ page.cases-all | default: 'Missing label'}}</button>
 				<div class="accordion-content">
 					<div class="sample-portfolio-grid">
 						{% for item in cases offset:2 %}
@@ -210,11 +198,7 @@ layout: default
 			</div>
 			{% if site.portfolio-experiments.size > 2 %}
 			<div class="accordion-wrapper">
-				<button class="accordion-button">{{ page.experiments-all | default: 'Missing label'}}
-					<svg class="icon-arrow">
-						<use href="#icon-arrow"></use>
-					</svg>
-				</button>
+				<button class="accordion-button">{{ page.experiments-all | default: 'Missing label'}}</button>
 				<div class="accordion-content">
 					<div class="sample-portfolio-grid">
 						{% for item in experiment offset:2 %}
@@ -274,11 +258,7 @@ layout: default
 				{% endfor %}
 			</div>
 			<div class="more">
-				<a href="{{ '/articles/' | relative_url }}">{{ page.articles-all | default: 'Missing label'}}
-					<svg class="icon-arrow">
-						<use href="#icon-arrow"></use>
-					</svg>
-				</a>
+				<a href="{{ '/articles/' | relative_url }}">{{ page.articles-all | default: 'Missing label'}}</a>
 			</div>
 		</section>
 	</div>
@@ -287,6 +267,5 @@ layout: default
 	{% include footer.html %}
 </main>
 
-{% include svg-filters.html %}
 {% include home-scripts.html %}
 {% include bonus-stage.html %}
