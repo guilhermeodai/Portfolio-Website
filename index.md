@@ -3,7 +3,7 @@ layout: index
 
 button-portfolio: "To portfolio"
 button-linkedin: "Let's connect"
-button-about: "Profile"
+button-about: "Check my profile"
 
 projects-title: "Product Design"
 projects-description: "Shipped projects that demanded me every tool in the box: wireframing, prototyping, visual design, and more"
