@@ -137,6 +137,8 @@
 	--fluid-padding-h: clamp(1rem, 8%, 4rem);
 	--logo-padding-mobile: clamp(2rem, 1.6429rem + 1.7857vw, 2.5rem);
 	--logo-padding: calc(clamp(1.5rem, -1.3966rem + 6.0345vw, 5rem) + 1.5rem);
+
+	transition: color 0.3s ease;
 }
 
 /* Tema Claro */
@@ -225,7 +227,6 @@ progress {vertical-align: baseline;}
 ::-webkit-search-decoration {-webkit-appearance: none;}
 ::-webkit-file-upload-button {-webkit-appearance: button; font: inherit;}
 summary {display: list-item;}
-svg {transition: color 0.3s ease;}
 
 /*	#endregion */
 
@@ -638,17 +639,43 @@ svg.icon-itchio {
 	font-size: var(--h3);
 	letter-spacing: -.01em;
 	text-decoration: none;
+	text-shadow: none;
+	transition: text-shadow 0.6s ease;
 }
 
 #logo a:hover {
 	color: var(--color-background);
-	animation: shadow-trail 0.3s steps(7) forwards;
-	animation-timing-function: ease-out;
+	text-shadow:
+	1px -.5px var(--color-foreground),
+	2px -1px var(--color-foreground),
+	3px -1.5px var(--color-foreground),
+	4px -2px var(--color-foreground),
+	5px -2.5px var(--color-foreground),
+	6px -3px var(--color-foreground),
+	7px -3.5px var(--color-foreground),
+	8px -4px var(--color-foreground),
+	9px -4.5px var(--color-foreground),
+	10px -5px var(--color-foreground),
+	11px -5.5px var(--color-foreground),
+	12px -6px var(--color-foreground);
 }
 
 #logo a:focus {
 	outline: none;
 	color: var(--color-accent);
+	text-shadow:
+	1px -.5px var(--color-foreground),
+	2px -1px var(--color-foreground),
+	3px -1.5px var(--color-foreground),
+	4px -2px var(--color-foreground),
+	5px -2.5px var(--color-foreground),
+	6px -3px var(--color-foreground),
+	7px -3.5px var(--color-foreground),
+	8px -4px var(--color-foreground),
+	9px -4.5px var(--color-foreground),
+	10px -5px var(--color-foreground),
+	11px -5.5px var(--color-foreground),
+	12px -6px var(--color-foreground);
 }
 
 #hamburger-menu {
@@ -1565,6 +1592,8 @@ img.hero-image {
 	gap: 0.375em;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	overflow: hidden;
 	margin: 0 auto;
 	padding: .5em 1em;
 	width: 100%;
@@ -1575,18 +1604,45 @@ img.hero-image {
 	font-size: var(--p);
 	font-weight: 600;
 	text-decoration: none;
+	z-index: 0;
+}
+
+.more a > span {
+	display: flex;
+	flex-direction: row;
+	column-gap: .5em;
+	align-items: center;
+	position: relative;
+	z-index: 1;
 }
 
 .more a:hover {
-	background: var(--color-accent);
 	border: .0625em solid var(--color-accent);
 	color: var(--color-background);
+	text-shadow: 0 0 2rem var(--color-foreground);
 }
 
 .more a:focus {
 	outline: none;
+	color: var(--color-background);
 	border-color: var(--color-accent);
 	box-shadow: 0 0 .5em .125em var(--color-shadow);
+}
+
+.more a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: var(--color-accent);
+	transform: scaleX(0);
+	transform-origin: center center;
+	transition: transform 0.4s ease;
+	z-index: 0;
+}
+
+.more a:hover::after,
+.more a:focus::after {
+	transform: scaleX(1);
 }
 
 /*	Portfolio */
@@ -1782,7 +1838,6 @@ footer p {
 	height: 10vh;
 	min-height: 4rem;
 	margin: calc(var(--logo-padding-mobile) * .875) 0 calc(var(--logo-padding-mobile) * .875 - 1.5rem) var(--logo-padding-mobile);
-	transition: color 0.3s ease;
 }
 
 .row {
@@ -1798,7 +1853,6 @@ footer p {
 	align-self: flex-start;
 	height: 1.5em;
 	color: var(--color-background);
-	transition: color 0.3s ease;
 	transform: rotate(90deg);
 }
 
@@ -1833,6 +1887,8 @@ footer p {
 	gap: 0.375em;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	overflow: hidden;
 	padding: .5em 1em;
 	background: var(--color-unfocused);
 	border: .0625em solid var(--color-support-lc);
@@ -1841,10 +1897,19 @@ footer p {
 	font-size: var(--p);
 	font-weight: 600;
 	text-decoration: none;
+	z-index: 0;
+}
+
+.cta-button > span {
+	display: flex;
+	flex-direction: row;
+	column-gap: .5em;
+	align-items: center;
+	position: relative;
+	z-index: 1;
 }
 
 .cta-button:hover {
-	background: var(--color-accent);
 	border: .0625em solid var(--color-accent);
 	color: var(--color-background);
 	text-shadow: 0 0 2rem var(--color-foreground);
@@ -1852,8 +1917,25 @@ footer p {
 
 .cta-button:focus {
 	outline: none;
+	color: var(--color-background);
 	border-color: var(--color-accent);
 	box-shadow: 0 0 .5em .125em var(--color-shadow);
+}
+
+.cta-button::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: var(--color-accent);
+	transform: scaleX(0);
+	transform-origin: center center;
+	transition: transform 0.4s ease;
+	z-index: 0;
+}
+
+.cta-button:hover::after,
+.cta-button:focus::after {
+	transform: scaleX(1);
 }
 
 @media only screen and (min-width: 48em) {
@@ -1917,6 +1999,8 @@ footer p {
 	gap: 0.375em;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	overflow: hidden;
 	margin: 0 auto;
 	padding: .5em 1em;
 	width: 100%;
@@ -1926,10 +2010,19 @@ footer p {
 	color: var(--color-foreground);
 	font-size: var(--p);
 	font-weight: 600;
+	z-index: 0;
+}
+
+.accordion-button > span {
+	display: flex;
+	flex-direction: row;
+	column-gap: .5em;
+	align-items: center;
+	position: relative;
+	z-index: 1;
 }
 
 .accordion-button:hover {
-	background: var(--color-accent);
 	border: .0625em solid var(--color-accent);
 	color: var(--color-background);
 	text-shadow: 0 0 2rem var(--color-foreground);
@@ -1937,8 +2030,25 @@ footer p {
 
 .accordion-button:focus {
 	outline: none;
+	color: var(--color-background);
 	border-color: var(--color-accent);
 	box-shadow: 0 0 .5em .125em var(--color-shadow);
+}
+
+.accordion-button::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: var(--color-accent);
+	transform: scaleX(0);
+	transform-origin: center center;
+	transition: transform 0.4s ease;
+	z-index: 0;
+}
+
+.accordion-button:hover::after,
+.accordion-button:focus::after {
+	transform: scaleX(1);
 }
 
 .accordion-content {
@@ -2004,41 +2114,3 @@ footer p {
 	color: var(--color-foreground);
 	text-shadow: 0 0 0.5em var(--color-accent);
 }
-
-
-@keyframes shadow-trail {
-	0% {
-		text-shadow: none;
-	}
-	10% {
-		text-shadow: 1px -.5px var(--color-foreground);
-	}
-	20% {
-		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground);
-	}
-	30% {
-		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground);
-	}
-	40% {
-		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground);
-	}
-	50% {
-		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground), 5px -2.5px var(--color-foreground);
-	}
-	60% {
-		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground), 5px -2.5px var(--color-foreground), 6px -3px var(--color-foreground);
-	}
-	70% {
-		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground), 5px -2.5px var(--color-foreground), 6px -3px var(--color-foreground), 7px -3.5px var(--color-foreground);
-	}
-	80% {
-		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground), 5px -2.5px var(--color-foreground), 6px -3px var(--color-foreground), 7px -3.5px var(--color-foreground), 8px -4px var(--color-foreground);
-	}
-	90% {
-		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground), 5px -2.5px var(--color-foreground), 6px -3px var(--color-foreground), 7px -3.5px var(--color-foreground), 8px -4px var(--color-foreground), 9px -4.5px var(--color-foreground);
-	}
-	100% {
-		text-shadow: 1px -.5px var(--color-foreground), 2px -1px var(--color-foreground), 3px -1.5px var(--color-foreground), 4px -2px var(--color-foreground), 5px -2.5px var(--color-foreground), 6px -3px var(--color-foreground), 7px -3.5px var(--color-foreground), 8px -4px var(--color-foreground), 9px -4.5px var(--color-foreground), 10px -5px var(--color-foreground);
-	}
-}
-
