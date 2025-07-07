@@ -2,20 +2,31 @@
 layout: default
 ---
 
-<main class="grid-container">
-	<article id="project">
-		<div class="content">
-			<header>
-				<h1>{{ page.title }}</h1>
-			</header>
-			<div class="iframe-wrapper">
-				<iframe class="game-iframe" src="{{ 'assets/extras/coolstd.html' | relative_url }}" title="Cool STD Crisis" allowfullscreen></iframe>
-			</div>
-			<div class="content-body">
-				{{ content }}
+<main>
+	<section id="game-console">
+		<div id="game">
+			<iframe class="game-iframe" src="{{ 'assets/extras/coolstd.html' | relative_url }}" title="Cool STD Crisis" allowfullscreen></iframe>
+			<div class="row center">
+				<svg class="left-corner">
+					<use href="#left-corner"></use>
+				</svg>
+				<header class="text">
+					<h1 class="rainbow">{{ page.title }}</h1>
+				</header>
+				<svg class="right-corner">
+					<use href="#right-corner"></use>
+				</svg>
 			</div>
 		</div>
-	</article>
+	</section>
+
+	<div class="grid-container">
+		<article id="project">
+			<div class="content-body short-padding">
+				{{ content }}
+			</div>
+		</article>
+	</div>
 </main>
 
 {% include footer.html %}
