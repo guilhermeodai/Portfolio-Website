@@ -33,7 +33,7 @@ layout: default
 	</section>
 
 	{% if site.portfolio-projects and site.portfolio-projects.size > 0 %}
-	<div id="product-design" class="grid-container secondary">
+	<section id="product-design" class="grid-container secondary">
 		<div class="col-4">
 			<header class="sticky">
 				<h2 class="section-title">{{ page.projects-title | default: 'Missing title'}}</h2>
@@ -43,7 +43,7 @@ layout: default
 		{% assign featured = site.portfolio-projects | where: "featured", true | sort: "order" %}
 		{% assign not_featured = site.portfolio-projects | where_exp: "item", "item.featured != true" | sort: "order" %}
 		{% assign projects = featured | concat: not_featured %}
-		<section class="col-8 no-margin">
+		<div class="col-8">
 			<div class="sample-portfolio-grid">
 				{% for item in projects limit:2 %}
 				<article class="portfolio-card">
@@ -66,7 +66,7 @@ layout: default
 			{% if site.portfolio-projects.size > 2 %}
 			<div class="accordion-wrapper">
 				<button class="accordion-button"><span>{{ page.projects-all | default: 'Missing label'}}</span></button>
-				<div class="accordion-content">
+				<div class="accordion-content" inert>
 					<div class="sample-portfolio-grid">
 						{% for item in projects offset:2 %}
 						<article class="portfolio-card">
@@ -90,12 +90,12 @@ layout: default
 			</div>
 			{% endif %}
 
-		</section>
-	</div>
+		</div>
+	</section>
 	{% endif %}
 
 	{% if site.portfolio-cases and site.portfolio-cases.size > 0 %}
-	<div id="case-studies" class="grid-container secondary">
+	<section id="case-studies" class="grid-container secondary">
 		<div class="col-4">
 			<header class="sticky">
 				<h2 class="section-title">{{ page.cases-title | default: 'Missing title'}}</h2>
@@ -110,7 +110,7 @@ layout: default
 		{% else %}
 		{% assign cases = fallback_cases %}
 		{% endif %}
-		<section class="col-8 no-margin">
+		<div class="col-8">
 			<div class="sample-portfolio-grid">
 				{% for item in cases limit:2 %}
 				<article class="portfolio-card">
@@ -133,7 +133,7 @@ layout: default
 			{% if site.portfolio-cases.size > 2 %}
 			<div class="accordion-wrapper">
 				<button class="accordion-button"><span>{{ page.cases-all | default: 'Missing label'}}</span></button>
-				<div class="accordion-content">
+				<div class="accordion-content" inert>
 					<div class="sample-portfolio-grid">
 						{% for item in cases offset:2 %}
 						<article class="portfolio-card">
@@ -157,12 +157,12 @@ layout: default
 			</div>
 			{% endif %}
 
-		</section>
-	</div>
+		</div>
+	</section>
 	{% endif %}
 
 	{% if site.portfolio-experiments and site.portfolio-experiments.size > 0 %}
-	<div id="side-quests" class="grid-container secondary">
+	<section id="side-quests" class="grid-container secondary">
 		<div class="col-4">
 			<header class="sticky">
 				<h2 class="section-title">{{ page.experiments-title | default: 'Missing title'}}</h2>
@@ -177,7 +177,7 @@ layout: default
 		{% else %}
 		{% assign experiment = fallback_experiment %}
 		{% endif %}
-		<section class="col-8 no-margin">
+		<div class="col-8">
 			<div class="sample-portfolio-grid">
 				{% for item in experiment limit:2 %}
 				<article class="portfolio-card">
@@ -200,7 +200,7 @@ layout: default
 			{% if site.portfolio-experiments.size > 2 %}
 			<div class="accordion-wrapper">
 				<button class="accordion-button"><span>{{ page.experiments-all | default: 'Missing label'}}</span></button>
-				<div class="accordion-content">
+				<div class="accordion-content" inert>
 					<div class="sample-portfolio-grid">
 						{% for item in experiment offset:2 %}
 						<article class="portfolio-card">
@@ -224,12 +224,12 @@ layout: default
 			</div>
 			{% endif %}
 
-		</section>
-	</div>
+		</div>
+	</section>
 	{% endif %}
 
 	{% if site.posts and site.posts.size > 0 %}
-	<div class="grid-container secondary">
+	<section class="grid-container secondary">
 		<div class="col-4">
 			<header class="sticky">
 				<h2 class="section-title">{{ page.articles-title | default: 'Missing title'}}</h2>
@@ -237,7 +237,7 @@ layout: default
 			</header>
 		</div>
 		{% assign blog = site.posts | sort: 'date' | reverse %}
-		<section id="articles" class="col-8 no-margin">
+		<div id="articles" class="col-8">
 			<div class="sample-blog-grid">
 				{% for post in blog limit:2 %}
 				<article class="blog-card">
@@ -261,8 +261,8 @@ layout: default
 			<div class="more">
 				<a href="{{ '/articles/' | relative_url }}"><span>{{ page.articles-all | default: 'Missing label'}}</span></a>
 			</div>
-		</section>
-	</div>
+		</div>
+	</section>
 	{% endif %}
 
 	{% include footer.html %}
