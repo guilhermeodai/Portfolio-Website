@@ -1,10 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 
-	<symbol id="icon-arrow" viewBox="0 0 16 16" fill="currentcolor">
-		<path d="M9.268 15.07a1 1 0 0 1-1.414 0l-.708-.708a1 1 0 0 1 0-1.414l4.95-4.95-4.95-4.95a1 1 0 0 1 0-1.414l.708-.707a1 1 0 0 1 1.414 0l6.364 6.364a1 1 0 0 1 0 1.414L9.268 15.07Z" />
-		<path d="M13.596 9.498H1.04a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h12.556v3Z" />
-	</symbol>
-
 	<symbol id="icon-calendar" viewBox="0 0 16 16" fill="currentcolor">
 		<path d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2l-.204-.01A2 2 0 0 1 0 14V2A2 2 0 0 1 1.796.01L2 0h12ZM1 5v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5H1Z" />
 		<rect width="2" height="2" x="3" y="6" rx=".5" />
