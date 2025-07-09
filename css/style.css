@@ -122,7 +122,6 @@
 	/* Cores que não mudam dependendo do tema */
 	--white: #fbfbfb;
 	--black: #000;
-	--gray: #808080;
 	--green: #009970;
 
 	/* Definições de grid */ 
@@ -493,8 +492,7 @@ label.contact-message {
 }
 
 ::placeholder {
-  color: var(--gray);
-  opacity: 1; /* Necessário para Firefox */
+  opacity: .67;
 }
 
 input[type="text"],
@@ -1158,9 +1156,8 @@ svg.icon-itchio {
 
 .portfolio-card-info small {
 	display: block;
-	color: var(--gray);
 	font-size: var(--h5);
-	font-weight: 600;
+	opacity: .67;
 }
 
 .tagline {
@@ -1364,9 +1361,8 @@ img.hero-image {
 
 .content-summary small {
 	display: block;
-	color: var(--gray);
+	opacity: .67;
 	font-size: var(--h5);
-	font-weight: 600;
 }
 
 .content-date {
@@ -1984,7 +1980,7 @@ footer p {
 .cta-button::after {
 	content: "";
 	position: absolute;
-	inset: 0;
+	inset: -.0625rem;
 	background: var(--gradient-accent);
 	transform: scaleX(0);
 	transform-origin: center center;
