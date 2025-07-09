@@ -566,7 +566,7 @@ button[type="submit"]::after {
 	content: "";
 	position: absolute;
 	z-index: 0;
-	inset: 0;
+	inset: -.0625rem;
 	background: var(--gradient-accent);
 	transform: scaleX(0);
 	transform-origin: center center;
@@ -1683,7 +1683,7 @@ img.hero-image {
 .more a::after {
 	content: "";
 	position: absolute;
-	inset: 0;
+	inset: -.0625rem;
 	background: var(--gradient-accent);
 	transform: scaleX(0);
 	transform-origin: center center;
@@ -2098,7 +2098,7 @@ footer p {
 .accordion-button::after {
 	content: "";
 	position: absolute;
-	inset: 0;
+	inset: -.0625rem;
 	background: var(--gradient-accent);
 	transform: scaleX(0);
 	transform-origin: center center;

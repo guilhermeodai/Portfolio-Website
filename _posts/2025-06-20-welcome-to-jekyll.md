@@ -4,8 +4,8 @@ description: "Alex Alekperov abriu sua loja de discos em Baku, no Azerbaijão, d
 date: 2025-06-20 22:47:17 +0200
 categories: jekyll update
 
-hero-image: #/assets/images/
-hero-caption: ""
+image: #/assets/images/
+image-caption: ""
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

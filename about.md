@@ -3,8 +3,8 @@ layout: page-profile
 title: About
 permalink: /about/
 
-hero-image: /assets/images/profile-picture.png
-hero-caption: ""
+image: /assets/images/profile-picture.webp
+image-caption: ""
 ---
 
 ## Hello.
