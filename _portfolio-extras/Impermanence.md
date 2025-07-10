@@ -4,7 +4,7 @@ description: ""
 order: 2
 featured: false
 
-image: /assets/images/experiments/Impermanence/hero.png
+image: /assets/images/side-quests/Impermanence/hero.png
 image-caption: ""
 summary-description: "Master Thesis game prototype (PC)"
 summary-reason: "Academic project"

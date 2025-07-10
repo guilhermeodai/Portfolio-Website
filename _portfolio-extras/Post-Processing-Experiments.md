@@ -4,7 +4,7 @@ description: ""
 order: 3
 featured: false
 
-image: /assets/images/experiments/Post-Processing-Experiments/fuji.jpg
+image: /assets/images/side-quests/Post-Processing-Experiments/fuji.jpg
 image-caption: ""
 summary-description: "Photo collection"
 summary-reason: "Personal project"

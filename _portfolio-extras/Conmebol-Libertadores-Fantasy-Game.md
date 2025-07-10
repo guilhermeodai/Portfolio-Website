@@ -4,7 +4,7 @@ description: ""
 order: 1
 featured: false
 
-image: /assets/images/experiments/Conmebol-Libertadores-Fantasy-Game/3_hero.jpg
+image: /assets/images/side-quests/Conmebol-Libertadores-Fantasy-Game/cl-fantasy_hero.webp
 image-caption: ""
 
 card-problem: ""

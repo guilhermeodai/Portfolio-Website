@@ -29,7 +29,7 @@ github_username:  guilhermeodai
 # RSS
 feed:
   path: feed.xml
-  title: "Guilherme Odai's musings and rants"
+  title: "Guilherme Almeida's musings and rants"
 
 # Build settings
 plugins:
@@ -47,13 +47,13 @@ collections:
     output: true 
     permalink: /portfolio/case-studies/:title/
   
-  portfolio-experiments:
+  portfolio-extras:
     output: true 
-    permalink: /portfolio/experiments/:title/
+    permalink: /portfolio/side-quests/:title/
 
-  portfolio-projects:
+  portfolio-products:
     output: true
-    permalink: /portfolio/projects/:title/
+    permalink: /portfolio/product-design/:title/
 
 # Defaults Front Matter
 defaults:
@@ -74,16 +74,16 @@ defaults:
   -
     scope:
       path: ""
-      type: "portfolio-experiments"
+      type: "portfolio-extras"
     values:
-      layout: "portfolio-experiment"
+      layout: "portfolio-extra"
       order: 99
   -
     scope:
       path: ""
-      type: "portfolio-projects"
+      type: "portfolio-products"
     values:
-      layout: "portfolio-project"
+      layout: "portfolio-product"
       order: 99
 
 exclude:
