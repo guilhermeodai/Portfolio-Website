@@ -150,7 +150,7 @@
 	--color-theme-toggle: #ff7f50;
 	--color-unfocused: #fff;
 	--color-focused: rgba(0,153,112,.08);
-	--color-pulse: rgba(0,153,112,.5);
+	--color-pulse: rgba(0,153,112,.75);
 	--gradient-accent: linear-gradient(to right, #00ffaa 0%, #009970 35%, #009970 65%, #00ffaa 100%);
 	--home-hero: url("../assets/temp/tokyo.jpg");
 }
@@ -166,7 +166,7 @@
 	--color-theme-toggle: #4682b4;
 	--color-unfocused: #1d1d1d;
 	--color-focused: rgba(0,255,170,.04);
-	--color-pulse: rgba(0,255,170,.5);
+	--color-pulse: rgba(0,255,170,.75);
 	--gradient-accent: linear-gradient(to right, #009970 0%, #00ffaa 35%, #00ffaa 65%, #009970 100%);
 	--home-hero: url("../assets/temp/fuji.jpg");
 }
@@ -1100,14 +1100,14 @@ svg.icon-itchio {
 	aspect-ratio: 4 / 3;
 	position: relative;
 	overflow: hidden;
-	transition: transform .3s ease;
 }
 
 .portfolio-card img {
 	width: 100%;
 	height: 100%;
-	display: block;
 	object-fit: cover;
+	transform: scale(1.04);
+	transition: transform .3s ease, filter .3s ease;
 }
 
 .portfolio-card-info {
@@ -1116,8 +1116,8 @@ svg.icon-itchio {
 	flex-grow: 1;
 	justify-content: space-between;
 	position: relative;
-	margin-top: -.0625em;
-	padding: 1.5em;
+	margin-top: -.0625rem;
+	padding: 1.5rem 1.75rem 1.75rem;
 	background-color: var(--color-foreground);
 }
 
@@ -1160,12 +1160,6 @@ svg.icon-itchio {
 	opacity: .67;
 }
 
-.tagline {
-	margin-top: 1.5em;
-	padding: .25em 0 0;
-	border-top: .0625em solid var(--color-support-hc);
-}
-
 .blog-card {
 	display: flex;
 	overflow: hidden;
@@ -1186,14 +1180,14 @@ svg.icon-itchio {
 	aspect-ratio: 16 / 9;
 	position: relative;
 	overflow: hidden;
-	transition: transform .3s ease;
 }
 
 .blog-card-image img {
 	width: 100%;
 	height: 100%;
-	display: block;
 	object-fit: cover;
+	transform: scale(1.04);
+	transition: transform .3s ease, filter .3s ease;
 }
 
 .blog-card-info {
@@ -1202,8 +1196,8 @@ svg.icon-itchio {
 	flex-grow: 1;
 	justify-content: space-between;
 	position: relative;
-	margin-top: -.0625em;
-	padding: 1.5em 1.75em;
+	margin-top: -.0625rem;
+	padding: 1.5rem 1.75rem 1.75rem;
 	background-color: var(--color-foreground);
 }
 
@@ -1233,23 +1227,6 @@ svg.icon-itchio {
 	transform: scale(1.03);
 }
 
-.portfolio-card .portfolio-card-image::after,
-.blog-card .blog-card-image::after {
-	content: "";
-	position: absolute;
-	inset: 0;
-	background-color: var(--green);
-	mix-blend-mode: hue;
-	opacity: 0;
-	transition: opacity .3s ease;
-	pointer-events: none;
-}
-
-.portfolio-card:hover .portfolio-card-image::after,
-.blog-card:hover .blog-card-image::after {
-	opacity: 1;
-}
-
 .portfolio-card:focus-within,
 .blog-card:focus-within {
 	outline: none;
@@ -1261,6 +1238,40 @@ svg.icon-itchio {
 .blog-card:active {
 	transform: scale(1.0);
 	animation: none;
+}
+
+.portfolio-card:hover .portfolio-card-image img,
+.portfolio-card:focus-within .portfolio-card-image img, 
+.blog-card:hover .blog-card-image img,
+.blog-card:focus-within .blog-card-image img {
+	filter: blur(.25em);
+	transform: scale(1.04);
+}
+
+.portfolio-card .portfolio-card-image::after,
+.blog-card .blog-card-image::after {
+	content: "Learn more";
+	pointer-events: none;
+	position: absolute;
+	inset: 0;
+	padding: 1.75rem;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, .5);
+	background-image: url('/assets/icons/icon-arrow.svg');
+	background-repeat: no-repeat;
+	background-position: top 1.75rem right 1.75rem;
+	background-size: auto clamp(1.125rem, 1.0378rem + 0.436vw, 1.5rem);
+	color: var(--white);
+	font-size: var(--p);
+	font-weight: 600;
+	transition: opacity .3s ease;
+}
+
+.portfolio-card:hover .portfolio-card-image::after,
+.portfolio-card:focus-within .portfolio-card-image::after,
+.blog-card:hover .blog-card-image::after,
+.blog-card:focus-within .blog-card-image::after {
+	opacity: 1;
 }
 
 /*  viewport >= 768px */
