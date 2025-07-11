@@ -4,7 +4,7 @@ description: ""
 order: 1
 featured: false
 
-image: /assets/images/side-quests/Conmebol-Libertadores-Fantasy-Game/cl-fantasy_hero.webp
+image: /assets/images/portfolio/sq_libertadores-fantasy-game/cl-fantasy_hero.webp
 image-caption: ""
 
 card-problem: ""
@@ -13,7 +13,7 @@ card-outcome: ""
 
 summary-description: ""
 summary-employer: ""
-summary-role: "Visual Designer, UX Designer"
+summary-role: "UI/UX Designer"
 summary-process: "User Research, Prototyping, Visual Design, User Testing"
 ---
 

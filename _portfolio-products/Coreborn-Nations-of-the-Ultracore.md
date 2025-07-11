@@ -4,7 +4,7 @@ description: ""
 order: 1
 featured: false
 
-image: /assets/images/product-design/Coreborn-Nations-of-the-Ultracore/T_LoginScreen_Illustration.jpg
+image: /assets/images/portfolio/pd_coreborn/T_LoginScreen_Illustration.jpg
 image-caption: ""
 summary-description: "Multiplayer Survival Game (PC)"
 summary-company: "Blankhans GmbH (Gaming)"

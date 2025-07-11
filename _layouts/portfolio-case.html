@@ -8,11 +8,7 @@ layout: default
 			<header>
 				<h1>{{ page.title }}</h1>
 			</header>
-			<figure class="content-hero">
-				<img class="hero-image" src="{{ page.image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ page.hero-caption | default: page.title }}">
-			</figure>
 			<div class="content-summary">
-				<h3>Project Summary</h3>
 				<ul>
 					<li><small>Description (Platforms)</small> {{ page.summary-description | default: '—'}}</li>
 					<li><small>Employer (Sector)</small> {{ page.summary-employer | default: '—'}}</li>
@@ -20,6 +16,9 @@ layout: default
 					<li><small>Process</small> {{ page.summary-process | default: '—'}}</li>
 				</ul>
 			</div>
+			<figure class="content-hero">
+				<img class="hero-image" src="{{ page.image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ page.hero-caption | default: page.title }}">
+			</figure>
 			<div class="content-body">
 				{{ content }}
 			</div>

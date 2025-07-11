@@ -1,10 +1,10 @@
 ---
-title: "Post-Processing Experiments"
+title: "Post-Processing Photography"
 description: ""
 order: 3
 featured: false
 
-image: /assets/images/side-quests/Post-Processing-Experiments/fuji.jpg
+image: /assets/images/portfolio/sq_post-processing/fuji.jpg
 image-caption: ""
 summary-description: "Photo collection"
 summary-reason: "Personal project"
