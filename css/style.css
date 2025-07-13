@@ -2249,15 +2249,34 @@ footer p {
 }
 
 
+.portfolio-card-image video {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
 
-.content-body img {
+.content-hero video {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+
+
+.content-body p:has(img) {
+	margin: 0;
+}
+
+.content-body img,
+.content-body video {
 	border-radius: 1.5rem;
 	max-width: 100%;
 	margin: calc(var(--p) * 1.4) 0;
 }
 
 @media only screen and (min-width: 50em) {
-	.content-body img {
+	.content-body img,
+	.content-body video {
 		max-width: calc(100% + (var(--fluid-padding-h) * 2));
 		margin: calc(var(--p) * 1.4) calc(var(--fluid-padding-h) * -1);
 	}

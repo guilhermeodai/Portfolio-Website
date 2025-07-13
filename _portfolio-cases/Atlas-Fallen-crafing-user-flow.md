@@ -1,5 +1,5 @@
 ---
-title: "Atlas Fallen: redesigning its Crafting user flow"
+title: "Atlas Fallen: redesigning its crafting user flow"
 description: ""
 order: 2
 featured: false
@@ -13,7 +13,7 @@ card-outcome: ""
 
 summary-description: "AA Action RPG (PC, Console)"
 summary-employer: "Deck 13 (Gaming)"
-summary-role: "UX Designer"
+summary-role: "UX Design"
 summary-process: "Wireframing"
 ---
 

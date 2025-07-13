@@ -8,6 +8,6 @@ image: /assets/images/portfolio/pd_coreborn/T_LoginScreen_Illustration.jpg
 image-caption: ""
 summary-description: "Multiplayer Survival Game (PC)"
 summary-company: "Blankhans GmbH (Gaming)"
-summary-role: "UI/UX Generalist"
+summary-role: "UI Design, UX Design"
 summary-tools: "Figma, Photoshop, Unreal Engine 5 / UMG"
 ---

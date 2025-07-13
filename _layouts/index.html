@@ -45,7 +45,7 @@ layout: default
 		{% assign projects = featured | concat: not_featured %}
 		<div class="col-8">
 			<div class="sample-portfolio-grid">
-				{% for item in projects limit:2 %}
+				{% for item in projects limit:4 %}
 				<article class="portfolio-card">
 					<a href="{{ item.url }}" class="portfolio-card-link">
 						<div class="portfolio-card-image">
@@ -63,7 +63,7 @@ layout: default
 				</article>
 				{% endfor %}
 			</div>
-			{% if site.portfolio-products.size > 2 %}
+			{% if site.portfolio-products.size > 4 %}
 			<div class="accordion-wrapper">
 				<button class="accordion-button"><span>▼</span><span>{{ page.products-all | default: 'Missing label'}}</span><span>▼</span></button>
 				<div class="accordion-content" inert>
@@ -112,7 +112,7 @@ layout: default
 		{% endif %}
 		<div class="col-8">
 			<div class="sample-portfolio-grid">
-				{% for item in cases limit:2 %}
+				{% for item in cases limit:4 %}
 				<article class="portfolio-card">
 					<a href="{{ item.url }}" class="portfolio-card-link">
 						<div class="portfolio-card-image">
@@ -130,7 +130,7 @@ layout: default
 				</article>
 				{% endfor %}
 			</div>
-			{% if site.portfolio-cases.size > 2 %}
+			{% if site.portfolio-cases.size > 4 %}
 			<div class="accordion-wrapper">
 				<button class="accordion-button"><span>▼</span><span>{{ page.cases-all | default: 'Missing label'}}</span><span>▼</span></button>
 				<div class="accordion-content" inert>
@@ -179,11 +179,18 @@ layout: default
 		{% endif %}
 		<div class="col-8">
 			<div class="sample-portfolio-grid">
-				{% for item in extra limit:2 %}
+				{% for item in extra limit:4 %}
 				<article class="portfolio-card">
 					<a href="{{ item.url }}" class="portfolio-card-link">
 						<div class="portfolio-card-image">
+							{% if item.video %}
+							<video autoplay loop muted playsinline class="card-video">
+								<source src="{{ item.video }}" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+							{% elsif item.image %}
 							<img src="{{ item.image | default: '/assets/images/missing-image.svg' | relative_url }}" loading="lazy" alt="{{ item.title }} preview">
+							{% endif %}
 						</div>
 						<div class="portfolio-card-info">
 							<h3>{{ item.title }}</h3>
@@ -197,7 +204,7 @@ layout: default
 				</article>
 				{% endfor %}
 			</div>
-			{% if site.portfolio-extras.size > 2 %}
+			{% if site.portfolio-extras.size > 4 %}
 			<div class="accordion-wrapper">
 				<button class="accordion-button"><span>▼</span><span>{{ page.extras-all | default: 'Missing label'}}</span><span>▼</span></button>
 				<div class="accordion-content" inert>

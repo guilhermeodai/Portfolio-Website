@@ -1,14 +1,14 @@
 ---
 title: "TiX"
 description: ""
-order: 5
+order: 4
 featured: false
 
 image: /assets/images/portfolio/pd_tix/hero.webp
 image-caption: ""
 summary-description: "Accessibility Device (PC, Mac, Linux, iOS, Android)"
 summary-company: "TiX Tecnologia Assistiva (Tech)"
-summary-role: "UI Designer"
+summary-role: "UI Design"
 summary-tools: "Illustrator"
 ---
 

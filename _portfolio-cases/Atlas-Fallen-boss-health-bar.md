@@ -1,5 +1,5 @@
 ---
-title: "Atlas Fallen: designing a segmented, minimalistic boss Health Bar system"
+title: "Atlas Fallen: managing multiple health bars on a single boss"
 description: ""
 order: 1
 featured: false
@@ -13,7 +13,7 @@ card-outcome: ""
 
 summary-description: "AA Action RPG (PC, Console)"
 summary-employer: "Deck 13 (Gaming)"
-summary-role: "UX Designer"
+summary-role: "UX Design"
 summary-process: "Rapid Prototyping, User Testing"
 ---
 

@@ -8,7 +8,7 @@ image: /assets/images/portfolio/sq_impermanence/hero.png
 image-caption: ""
 summary-description: "Master Thesis game prototype (PC)"
 summary-reason: "Academic project"
-summary-role: "Game Designer, UI/UX Designer"
+summary-role: "Game Design, UI Design, UX Design"
 summary-tools: "Unity Engine, Adobe XD, Photoshop, Illustrator"
 ---
 
