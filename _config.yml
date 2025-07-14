@@ -35,7 +35,6 @@ feed:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-minifier
 
 # Data
 data:
@@ -86,11 +85,6 @@ defaults:
     values:
       layout: "portfolio-product"
       order: 99
-
-# Minifier Settings
-jekyll-minifier:
-  uglifier_args:
-    harmony: true
 
 # Ignored Files
 exclude:
