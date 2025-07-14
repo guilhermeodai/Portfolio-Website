@@ -1,0 +1,36 @@
+# netlify.toml
+
+[build]
+  command = "JEKYLL_ENV=production bundle exec jekyll build"
+  publish = "_site"
+
+# --- Configurações de Headers HTTP para Cache ---
+
+# Regra geral para o HTML principal e arquivos que podem mudar frequentemente
+[[headers]]
+  for = "/*" # Aplica a todos os caminhos
+  [headers.values]
+    Cache-Control = '''
+    public,
+    max-age=0,          # Não cacheie no navegador, sempre revalide
+    must-revalidate'''  # Força revalidação com o servidor
+
+# Regra específica para arquivos estáticos (CSS, JS, Imagens, Fontes)
+# Assumindo que seus arquivos estáticos estão em '/assets/' ou '/images/'
+# Ajuste os caminhos conforme a estrutura do seu projeto!
+[[headers]]
+  for = "/assets/*" # Exemplo: aplica para arquivos na pasta assets
+  [headers.values]
+    Cache-Control = '''
+    public,
+    max-age=31536000, # Cache por 1 ano (muito alto, use se os nomes mudam com o conteúdo - "cache-busting")
+    immutable'''     # Indica que o recurso nunca muda (ideal com cache-busting)
+
+# Exemplo para pasta de imagens separada
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = '''
+    public,
+    max-age=31536000,
+    immutable'''

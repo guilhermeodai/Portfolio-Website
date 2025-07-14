@@ -152,7 +152,7 @@
 	--color-focused: rgba(0,153,112,.08);
 	--color-pulse: rgba(0,153,112,.5);
 	--gradient-accent: linear-gradient(to right, #00ffaa 0%, #009970 35%, #009970 65%, #00ffaa 100%);
-	--home-hero: url("../assets/temp/tokyo.jpg");
+	--home-hero: url("../assets/temp/tokyo.webp");
 }
 
 /* Tema Escuro */
@@ -168,7 +168,7 @@
 	--color-focused: rgba(0,255,170,.04);
 	--color-pulse: rgba(0,255,170,.5);
 	--gradient-accent: linear-gradient(to right, #009970 0%, #00ffaa 35%, #00ffaa 65%, #009970 100%);
-	--home-hero: url("../assets/temp/fuji.jpg");
+	--home-hero: url("../assets/temp/fuji.webp");
 }
 
 /*  viewport >= 480px */

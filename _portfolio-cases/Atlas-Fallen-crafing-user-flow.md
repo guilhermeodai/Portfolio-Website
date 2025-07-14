@@ -4,7 +4,7 @@ description: ""
 order: 2
 featured: false
 
-image: /assets/images/portfolio/cs_atlas-fallen-crafting/hero.jpg
+image: /assets/images/portfolio/cs_atlas-fallen-crafting/hero.webp
 image-caption: ""
 
 card-problem: ""
