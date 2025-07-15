@@ -10,7 +10,7 @@ video: /assets/images/portfolio/sq_post-processing/osaka.mp4
 summary-description: "Photo collection"
 summary-reason: "Personal project"
 summary-role: "Photography, Editing"
-summary-tools: "Photoshop, Nik Collection"
+summary-tools: "Photoshop, Nik Collection, After Effects"
 ---
 
 A series of experiments with post-processing and LUT profiles, inspired by the works of [Masashi Wakui](https://www.flickr.com/photos/megane_wakui/with/51054535447){:target="_blank" rel="noopener noreferrer"}. I aimed at replicating some of the aspects that drew me to his photography: ordinary scenes paired with surreal colors, especially on night time images.
