@@ -2316,6 +2316,4 @@ footer p {
 .content-body li {
 	margin-top: calc(var(--p) * .7);
 	margin-bottom: calc(var(--p) * .7);
-	font-style: italic;
-	font-family: var(--serif);
 }
