@@ -1,7 +1,7 @@
 ---
-title: "Atlas Fallen: redesigning its crafting user flow"
+title: "Atlas Fallen → Crafting User Flow Redesign"
 description: ""
-order: 2
+order: 3
 featured: false
 
 image: /assets/images/portfolio/cs_atlas-fallen-crafting/hero.webp

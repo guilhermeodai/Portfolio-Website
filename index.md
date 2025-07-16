@@ -6,11 +6,11 @@ button-about: "Check my profile"
 button-linkedin: "Let's connect"
 
 products-title: "Product Design"
-products-description: "Shipped projects that demanded me every tool in the box: wireframing, prototyping, visual design, and more"
+products-description: "Shipped projects with a focus on deliverables: gaming UIs, websites"
 products-all: "Show all projects"
 
 cases-title: "Case Studies"
-cases-description: "Detailed analysis of problems, processes, and impactful results, with a focus on the UX side"
+cases-description: "Detailed analysis of problems, processes, and impactful results"
 cases-all: "Show all case studies"
 
 extras-title: "Side Quests"

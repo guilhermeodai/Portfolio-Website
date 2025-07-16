@@ -1,7 +1,7 @@
 ---
-title: "Atlas Fallen: managing multiple health bars on a single boss"
+title: "Atlas Fallen → Boss Health Bars"
 description: ""
-order: 1
+order: 2
 featured: false
 
 image: /assets/images/portfolio/cs_atlas-fallen-health-bar/hero.webp
@@ -19,7 +19,7 @@ summary-process: "Rapid Prototyping, User Testing"
 
 One of Atlas Fallen's unique features is its combat system, where players are required to incapacitate multiple body parts in order to defeat bosses and some other strong enemies. On top of that, those body parts are divided in two types: mandatory, where incapacitating them is a requirement for defeating the enemy, and optional, where incapacitation is not needed but doing so would give the player an additional reward for going the extra mile.
 
-## Challenge
+## Background
 
 The impact of this game design choice on the UI is that each body part requires its own health bar to inform players how much damage still needs to be dealt. Considering players can engage multiple enemies at the same time, a scenario where 10+ health bars are simultaneously displayed was a real possibility, even if only on a small percentage of fights. So I was tasked with creating concepts for those enemies’ health bars, with a few goals in mind: 
 

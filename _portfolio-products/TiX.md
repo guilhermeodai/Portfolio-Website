@@ -16,6 +16,8 @@ TiX is one of the most successful products of TiX Tecnologia Assistiva, an acces
 
 The company was in the process of developing the production version of their homonimous flagship product when I was brought in to redesign its UI. They had a working prototype, and at the beginning their most pressing issue was of visual clarity: the prototype's UI was quite rough and cluttered, making it quite information dense and hard to read.
 
+## Process
+
 The starting point then was reworking the design of the pads. TiX features 11 touch-sensitive pads the user activates through combinations of consecutive touches. Nine of these pads are used for character input, while the remaining two serve as modifiers to enable or disable specific functions. Each pad is distinguished by both a color and a unique symbol. This dual coding system not only reinforces recognition and memorability but also ensures that users with visual impairments such as color blindness can rely on shape recognition to navigate the interface effectively.
 
 {% include figure.html 

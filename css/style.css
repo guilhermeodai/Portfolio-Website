@@ -319,12 +319,12 @@ p, li {
 	color: var(--color-foreground);
 	font-weight: normal;
 	font-size: var(--p);
+	letter-spacing: .005em;
 	line-height: 1.4em;
 }
 
 p {
 	margin: 1.4em 0;
-	letter-spacing: .02em;
 }
 
 p a {
@@ -334,10 +334,6 @@ p a {
 
 h2 + p {
 	margin-top: .375em;
-}
-
-li {
-	letter-spacing: .01em;
 }
 
 em, i {
@@ -1514,7 +1510,7 @@ svg.icon-itchio {
 	margin-bottom: calc(1.4 * var(--p));
 	font-size: var(--h3);
 	font-weight: 600;
-	letter-spacing: 0;
+	letter-spacing: -.005em;
 	line-height: 1.25em;
 }
 
